@@ -1,0 +1,22 @@
+module shifter (
+    input a[8],
+    input b[8],
+    input alufn[6],
+    output out[8]
+  ) {
+
+  always {
+    out = 0;
+    
+    case (alufn) {
+      Inst.SHL:
+        out = a << b[2:0];  // shift left
+      Inst.SHR:
+        out = a >> b[2:0];  // shift right
+      Inst.SRA:
+        out = a >>> b[2:0]; // shift right arithmetic
+        
+    }
+
+  }
+}

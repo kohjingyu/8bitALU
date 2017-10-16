@@ -1,0 +1,22 @@
+module boolean (
+    input a[8],
+    input b[8],
+    input alufn[6],
+    output out[8]
+  ) {
+
+  always {
+    out = 0;
+    
+    case(alufn) {
+      Inst.AND:
+        out = a & b;        // bit-wise AND
+      Inst.OR:
+        out = a | b;        // bit-wise OR
+      Inst.XOR:
+        out = a ^ b;        // bit-wise XOR
+      Inst.LDR:
+        out = a;
+    }
+  }
+}

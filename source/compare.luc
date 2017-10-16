@@ -1,0 +1,21 @@
+module compare (
+    input a[8],
+    input b[8],
+    input alufn[6],
+    output out[8]
+  ) {
+
+  always {
+    out = 0;
+    
+    case(alufn) {
+      Inst.CMPEQ:
+        out[0] = a == b;    // equals comparison
+      Inst.CMPLT:
+        out[0] = a < b;     // less-than comparison
+      Inst.CMPLE:
+        out[0] = a <= b;    // equal and less-than comparison
+    }
+
+  }
+}

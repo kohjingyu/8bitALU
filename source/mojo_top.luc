@@ -1,0 +1,199 @@
+global Inst {
+  const ADD = 6h0;
+  const SUB = 6h1;
+  const AND = 6h18;
+  const OR = 6h1e;
+  const XOR = 6h16;
+  const LDR = 6h1a;
+  const SHL = 6h20;
+  const SHR = 6h21;
+  const SRA = 6h23;
+  const CMPEQ = 6h33;
+  const CMPLT = 6h35;
+  const CMPLE = 6h37;
+}
+
+module mojo_top (
+    input clk,              // 50MHz clock
+    input rst_n,            // reset button (active low)
+    output led [8],         // 8 user controllable LEDs
+    input cclk,             // configuration clock, AVR ready when high
+    output spi_miso,        // AVR SPI MISO
+    input spi_ss,           // AVR SPI Slave Select
+    input spi_mosi,         // AVR SPI MOSI
+    input spi_sck,          // AVR SPI Clock
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
+    input avr_tx,           // AVR TX (FPGA RX)
+    output avr_rx,          // AVR RX (FPGA TX)
+    input avr_rx_busy,      // AVR RX buffer full
+    output io_led [3][8],   // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4],      // Digit select on IO Shield
+    input io_button [5],    // 5 buttons on IO Shield
+    input io_dip [3][8]     // DIP switches on IO Shield
+  ) {
+  
+  sig rst;                  // reset signal
+  sig a[8]; 
+  sig b[8]; 
+  sig alufn[6];
+  dff test_counter[8](.clk(clk), .rst(rst));
+  alu alu;
+    
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
+    
+    .rst(rst) {
+      fsm state = {IDLE, ADD, SUB, AND, OR, XOR, LDR, SHL, SHR, SRA, CMPEQ, CMPLT, CMPLE, PASS, FAIL};  
+    }    
+  }
+  
+  always {
+    reset_cond.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond.out;   // conditioned reset
+    
+    led = 8h00;             // turn LEDs off
+    spi_miso = bz;          // not using SPI
+    spi_channel = bzzzz;    // not using flags
+    avr_rx = bz;            // not using serial port
+    
+    io_led = 3x{{8h00}};    // turn LEDs off
+    io_seg = 8hff;          // turn segments off
+    io_sel = 4hf;           // select no digits
+    
+    
+    // Manual
+    a[7:0] = io_dip[0];
+    b[7:0] = io_dip[1];
+    alufn = io_dip[2][5:0];   
+    
+    alu.a = a;
+    alu.b = b;
+    alu.alufn = alufn; 
+        
+    // Automated testing
+    case(state.q) {
+      state.IDLE:
+        test_counter.d = 0; 
+                
+      state.ADD:
+        alufn = Inst.ADD;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.SUB;
+          test_counter.d = 0;
+          
+          // TODO: Insert test cases
+          alu.a = 8h1;
+          alu.b = 8h1;
+          if(alu.out != 8h) {
+            state.d = state.FAIL;
+          }
+        }
+        
+      state.SUB:
+        alufn = Inst.SUB;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.AND;
+          test_counter.d = 0;
+        }
+      
+      state.AND:
+        alufn = Inst.AND;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.OR;
+          test_counter.d = 0;
+        }
+        
+      state.OR:
+        alufn = Inst.OR;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.XOR;
+          test_counter.d = 0;
+        }
+              
+      state.XOR:
+        alufn = Inst.XOR;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.LDR;
+          test_counter.d = 0;
+        }
+        
+      state.LDR:
+        alufn = Inst.LDR;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.SHL;
+          test_counter.d = 0;
+        }
+              
+      state.SHL:
+        alufn = Inst.SHL;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.SHR;
+          test_counter.d = 0;
+        }
+        
+      state.SHR:
+        alufn = Inst.SHR;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.SRA;
+          test_counter.d = 0;
+        }
+
+      state.SRA:
+        alufn = Inst.SRA;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.CMPEQ;
+          test_counter.d = 0;
+        }
+        
+      state.CMPEQ:
+        alufn = Inst.CMPEQ;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.CMPLT;
+          test_counter.d = 0;
+        }
+        
+      state.CMPLT:
+        alufn = Inst.CMPLT;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.CMPLE;
+          test_counter.d = 0;
+        }
+        
+      state.CMPLE:
+        alufn = Inst.CMPLE;
+        if (test_counter.q[7:0]== 8hFF){
+          state.d = state.PASS;
+          test_counter.d = 0;
+        }
+        
+      state.PASS:
+        test_counter.d = 0;
+        io_sel = ~4h8;
+        io_seg = ~7b1110011; // P
+        
+      state.FAIL:
+      // Display failed test case on LEDs
+        test_counter.d = 0;
+        
+        // TODO: show fail on 7 segment display
+        io_sel = ~4h8;
+        io_seg = ~7b1110001; // F
+    }
+    
+    // automated testing triggered on press of io_button[0] (up)
+    if(io_button[0])
+    {
+        test_counter.d = 0;
+        state.d = state.ADD;
+    }
+    
+    test_counter.d = test_counter.q + 1;
+    
+    
+    // Set output to ALU
+    io_led[0] = alu.out;
+  }
+}

@@ -1,0 +1,74 @@
+module alu (
+    input a[8],
+    input b[8],
+    input alufn[6],
+    output out[8]
+  ) {
+  
+  adder adder;
+  boolean boolean;
+  compare compare;
+  shifter shifter;
+
+  always {
+    out = 0;
+    
+    // Setup adder, boolean, comparator, shifter submodules 
+    adder.a = a;
+    adder.b = b;
+    adder.alufn = alufn;
+      
+    boolean.a = a;
+    boolean.b = b;
+    boolean.alufn = alufn;
+      
+    compare.a = a;
+    compare.b = b;
+    compare.alufn = alufn;
+    
+    shifter.a = a;
+    shifter.b = b;
+    shifter.alufn = alufn;
+  
+    // Determine which submodule to use
+    case (alufn) {
+      Inst.ADD:
+        // Adder - Add
+        out = adder.out;        
+      Inst.SUB:
+        // Adder - Subtract
+        out = adder.out;        
+      Inst.AND:
+        // Boolean - AND
+        out = boolean.out;        
+      Inst.OR:
+        // Boolean - OR
+        out = boolean.out;        
+      Inst.XOR:
+        // Boolean - XOR
+        out = boolean.out;        
+      Inst.LDR:
+        // Boolean - LDR
+        out = boolean.out;        
+      Inst.CMPEQ:
+        // Compare: ==
+        out = compare.out;        
+      Inst.CMPLT:
+        // Compare: <=
+        out = compare.out;        
+      Inst.CMPLE:
+        // Compare: <
+        out = compare.out;        
+      Inst.SHL:
+        // Shifter: shift left
+        out = shifter.out;        
+      Inst.SHR:
+        // Shifter: shift right
+        out = shifter.out;        
+      Inst.SRA:
+        // Shifter: shift right with sign extension
+        out = shifter.out;        
+        
+    }
+  }
+}

@@ -1,0 +1,18 @@
+module adder (
+    input a[8],
+    input b[8],
+    input alufn[6],
+    output out[8]
+  ) {
+
+  always {
+    out = 0;
+    
+    case(alufn) {
+      Inst.ADD:
+        out = a + b;        // addition
+      Inst.SUB:
+        out = a - b;        // subtraction     
+    }
+  }
+}
