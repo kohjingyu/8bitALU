@@ -3,7 +3,7 @@ module adder (
     input b[8],
     input alufn[6],
     output out[8]
-  ) {
+  ) {  
 
   always {
     out = 0;

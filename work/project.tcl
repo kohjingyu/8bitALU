@@ -5,7 +5,7 @@ set device xc6slx9-2tqg144
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "H:/8bitalu/work/verilog/mojo_top_0.v" "H:/8bitalu/work/verilog/alu_1.v" "H:/8bitalu/work/verilog/reset_conditioner_2.v" "H:/8bitalu/work/verilog/adder_3.v" "H:/8bitalu/work/verilog/boolean_4.v" "H:/8bitalu/work/verilog/compare_5.v" "H:/8bitalu/work/verilog/shifter_6.v"]
+set verilogSources [list "H:/8bitalu/work/verilog/mojo_top_0.v" "H:/8bitalu/work/verilog/alu_1.v" "H:/8bitalu/work/verilog/test_adder_2.v" "H:/8bitalu/work/verilog/test_compare_3.v" "H:/8bitalu/work/verilog/test_bool_4.v" "H:/8bitalu/work/verilog/test_shifter_5.v" "H:/8bitalu/work/verilog/reset_conditioner_6.v" "H:/8bitalu/work/verilog/multi_seven_seg_7.v" "H:/8bitalu/work/verilog/adder_8.v" "H:/8bitalu/work/verilog/boolean_9.v" "H:/8bitalu/work/verilog/compare_10.v" "H:/8bitalu/work/verilog/shifter_11.v" "H:/8bitalu/work/verilog/adder_8.v" "H:/8bitalu/work/verilog/compare_10.v" "H:/8bitalu/work/verilog/boolean_9.v" "H:/8bitalu/work/verilog/shifter_11.v" "H:/8bitalu/work/verilog/counter_16.v" "H:/8bitalu/work/verilog/seven_seg_17.v" "H:/8bitalu/work/verilog/decoder_18.v"]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
 set ucfSources [list  "C:/Program\ Files/Mojo\ IDE/library/components/io_shield.ucf" "C:/Program\ Files/Mojo\ IDE/library/components/mojo.ucf"]
 import_files -fileset [get_filesets constrs_1] -force -norecurse $ucfSources

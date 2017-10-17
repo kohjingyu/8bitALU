@@ -39,20 +39,34 @@ module mojo_top (
   sig alufn[6];
   dff test_counter[8](.clk(clk), .rst(rst));
   alu alu;
-    
+  test_adder test_adder;
+  test_compare test_compare; 
+  test_bool test_bool;
+  test_shifter test_shifter;
+       
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
     
     .rst(rst) {
-      fsm state = {IDLE, ADD, SUB, AND, OR, XOR, LDR, SHL, SHR, SRA, CMPEQ, CMPLT, CMPLE, PASS, FAIL};  
+      fsm state = {IDLE, ADDER, COMPARE, BOOL, SHIFTER, MULTIPLY};  
+      multi_seven_seg seg;
     }    
   }
   
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
+    
+    test_adder.clk = clk;
+    test_adder.rst = rst;
+    test_compare.clk = clk;
+    test_compare.rst = rst;
+    test_bool.clk = clk;
+    test_bool.rst = rst;
+    test_shifter.clk = clk;
+    test_shifter.rst = rst;
     
     led = 8h00;             // turn LEDs off
     spi_miso = bz;          // not using SPI
@@ -63,6 +77,9 @@ module mojo_top (
     io_seg = 8hff;          // turn segments off
     io_sel = 4hf;           // select no digits
     
+    seg.values = {4d15, 4d15, 4d15, 4d15};
+    io_seg = ~seg.seg;
+    io_sel = ~seg.sel;
     
     // Manual
     a[7:0] = io_dip[0];
@@ -72,123 +89,84 @@ module mojo_top (
     alu.a = a;
     alu.b = b;
     alu.alufn = alufn; 
+    
+    test_adder.start = 0;
+    test_compare.start = 0;
+    test_bool.start = 0;
+    test_shifter.start = 0;
         
     // Automated testing
     case(state.q) {
       state.IDLE:
         test_counter.d = 0; 
                 
-      state.ADD:
-        alufn = Inst.ADD;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.SUB;
-          test_counter.d = 0;
-          
-          // TODO: Insert test cases
-          alu.a = 8h1;
-          alu.b = 8h1;
-          if(alu.out != 8h) {
-            state.d = state.FAIL;
-          }
+      state.ADDER:
+        test_adder.start = 1;
+        
+        if(test_adder.status == 1) {
+          // PASS
+          seg.values = {4d10, 4d11, 4d5, 4d5};
+        }
+        else if(test_adder.status == 2) {
+          // FAIL
+          seg.values = {4d11, 4d0, 4d0, 4d13};
         }
         
-      state.SUB:
-        alufn = Inst.SUB;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.AND;
-          test_counter.d = 0;
+      state.COMPARE:
+        test_compare.start = 1;
+        
+        if(test_compare.status == 1) {
+          // PASS
+          seg.values = {4d10, 4d11, 4d5, 4d5};
         }
-      
-      state.AND:
-        alufn = Inst.AND;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.OR;
-          test_counter.d = 0;
+        else if(test_compare.status == 2) {
+          // FAIL
+          seg.values = {4d14, 4d0, 4d10, 4d13};
         }
         
-      state.OR:
-        alufn = Inst.OR;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.XOR;
-          test_counter.d = 0;
-        }
-              
-      state.XOR:
-        alufn = Inst.XOR;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.LDR;
-          test_counter.d = 0;
-        }
+      state.BOOL:
+        test_bool.start = 1;
         
-      state.LDR:
-        alufn = Inst.LDR;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.SHL;
-          test_counter.d = 0;
+        if(test_bool.status == 1) {
+          // PASS
+          seg.values = {4d10, 4d11, 4d5, 4d5};
         }
-              
-      state.SHL:
-        alufn = Inst.SHL;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.SHR;
-          test_counter.d = 0;
-        }
-        
-      state.SHR:
-        alufn = Inst.SHR;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.SRA;
-          test_counter.d = 0;
+        else if(test_bool.status == 2) {
+          // FAIL
+          seg.values = {4d8, 4d0, 4d0, 4d13};
         }
 
-      state.SRA:
-        alufn = Inst.SRA;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.CMPEQ;
-          test_counter.d = 0;
+      state.SHIFTER:
+        test_shifter.start = 1;
+        
+        if(test_shifter.status == 1) {
+          // PASS
+          seg.values = {4d10, 4d11, 4d5, 4d5};
         }
-        
-      state.CMPEQ:
-        alufn = Inst.CMPEQ;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.CMPLT;
-          test_counter.d = 0;
+        else if(test_shifter.status == 2) {
+          // FAIL
+          seg.values = {4d5, 4d13, 4d13, 4d15};
         }
-        
-      state.CMPLT:
-        alufn = Inst.CMPLT;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.CMPLE;
-          test_counter.d = 0;
-        }
-        
-      state.CMPLE:
-        alufn = Inst.CMPLE;
-        if (test_counter.q[7:0]== 8hFF){
-          state.d = state.PASS;
-          test_counter.d = 0;
-        }
-        
-      state.PASS:
-        test_counter.d = 0;
-        io_sel = ~4h8;
-        io_seg = ~7b1110011; // P
-        
-      state.FAIL:
-      // Display failed test case on LEDs
-        test_counter.d = 0;
-        
-        // TODO: show fail on 7 segment display
-        io_sel = ~4h8;
-        io_seg = ~7b1110001; // F
     }
     
     // automated testing triggered on press of io_button[0] (up)
-    if(io_button[0])
-    {
+    if(io_button[0]) {
         test_counter.d = 0;
-        state.d = state.ADD;
+        state.d = state.ADDER;
     }
+    if(io_button[1]) {
+        test_counter.d = 0;
+        state.d = state.COMPARE;
+    }
+    if(io_button[2]) {
+        test_counter.d = 0;
+        state.d = state.BOOL;
+    }
+    if(io_button[3]) {
+        test_counter.d = 0;
+        state.d = state.SHIFTER;
+    }
+    // TODO: Fail case, multiply case
     
     test_counter.d = test_counter.q + 1;
     

@@ -1,0 +1,65 @@
+module test_compare (
+    input clk,  // clock
+    input rst,  // reset
+    input start,
+    output status[2] // 0 = not done; 1 = pass; 2 = fail
+    
+  ) {
+  
+  dff test_counter[3](.clk(clk), .rst(rst));
+  
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    .rst(rst) {
+      fsm state = {IDLE, TEST, PASS, FAIL};  
+    }    
+  }
+  compare compare;
+    
+  always {  
+    status = 0;
+    compare.a = 0;
+    compare.b = 0;
+    compare.alufn = 6d0;
+    
+    if(start == 0){ 
+      state.d = state.IDLE;
+    }
+    
+    case(state.q) {
+      state.IDLE:
+        status = 0;
+        if(start == 1) {
+          state.d = state.TEST;
+        }
+      state.TEST:
+        case(test_counter.q) {
+          3b000:
+            compare.alufn = Inst.ADD;
+            compare.a = 8h1;
+            compare.b = 8h1;
+            
+            if(compare.out != 8h2) {
+              state.d = state.FAIL;
+            }             
+          3b001:
+            compare.alufn = Inst.ADD;
+            compare.a = 8h1;
+            compare.b = 8h2;
+            
+            if(compare.out != 8h3) {
+              state.d = state.FAIL;
+            }             
+          3b111:
+             state.d = state.PASS;            
+        }
+      state.PASS:
+        status = 1;
+      state.FAIL:
+        status = 2;
+    }
+    
+    test_counter.d = test_counter.q + 1;
+  }
+}

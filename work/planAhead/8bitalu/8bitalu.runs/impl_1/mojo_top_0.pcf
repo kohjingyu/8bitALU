@@ -1,9 +1,33 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Oct 16 18:18:41 2017
+// Written by: Map P.20131013 on Tue Oct 17 17:52:35 2017
 //! **************************************************************************
 
 SCHEMATIC START;
 CONFIG VCCAUX = "3.3";
+COMP "io_seg[0]" LOCATE = SITE "P5" LEVEL 1;
+COMP "spi_sck" LOCATE = SITE "P43" LEVEL 1;
+COMP "io_seg[1]" LOCATE = SITE "P8" LEVEL 1;
+COMP "io_seg[2]" LOCATE = SITE "P144" LEVEL 1;
+COMP "clk" LOCATE = SITE "P56" LEVEL 1;
+COMP "io_seg[3]" LOCATE = SITE "P143" LEVEL 1;
+COMP "avr_rx_busy" LOCATE = SITE "P39" LEVEL 1;
+COMP "io_seg[4]" LOCATE = SITE "P2" LEVEL 1;
+COMP "io_seg[5]" LOCATE = SITE "P6" LEVEL 1;
+COMP "io_seg[6]" LOCATE = SITE "P1" LEVEL 1;
+COMP "io_seg[7]" LOCATE = SITE "P141" LEVEL 1;
+COMP "io_led[10]" LOCATE = SITE "P82" LEVEL 1;
+COMP "io_button(4)" LOCATE = SITE "P138" LEVEL 1;
+COMP "io_led[11]" LOCATE = SITE "P83" LEVEL 1;
+COMP "io_led[12]" LOCATE = SITE "P80" LEVEL 1;
+COMP "io_led[20]" LOCATE = SITE "P22" LEVEL 1;
+COMP "spi_mosi" LOCATE = SITE "P44" LEVEL 1;
+COMP "io_led[13]" LOCATE = SITE "P81" LEVEL 1;
+COMP "io_led[21]" LOCATE = SITE "P23" LEVEL 1;
+COMP "io_led[14]" LOCATE = SITE "P11" LEVEL 1;
+COMP "io_led[22]" LOCATE = SITE "P24" LEVEL 1;
+COMP "io_led[15]" LOCATE = SITE "P14" LEVEL 1;
+COMP "io_led[23]" LOCATE = SITE "P26" LEVEL 1;
+COMP "io_dip[10]" LOCATE = SITE "P105" LEVEL 1;
 COMP "io_led[16]" LOCATE = SITE "P15" LEVEL 1;
 COMP "io_dip[11]" LOCATE = SITE "P104" LEVEL 1;
 COMP "io_led[17]" LOCATE = SITE "P16" LEVEL 1;
@@ -52,49 +76,31 @@ COMP "io_led[8]" LOCATE = SITE "P84" LEVEL 1;
 COMP "io_button[0]" LOCATE = SITE "P137" LEVEL 1;
 COMP "io_dip[6]" LOCATE = SITE "P114" LEVEL 1;
 COMP "io_led[9]" LOCATE = SITE "P85" LEVEL 1;
+COMP "io_button[1]" LOCATE = SITE "P140" LEVEL 1;
 COMP "io_dip[7]" LOCATE = SITE "P115" LEVEL 1;
+COMP "io_button[2]" LOCATE = SITE "P139" LEVEL 1;
 COMP "io_dip[8]" LOCATE = SITE "P112" LEVEL 1;
+COMP "io_button[3]" LOCATE = SITE "P142" LEVEL 1;
 COMP "io_dip[9]" LOCATE = SITE "P111" LEVEL 1;
 COMP "io_dip(22)" LOCATE = SITE "P58" LEVEL 1;
 COMP "cclk" LOCATE = SITE "P70" LEVEL 1;
 COMP "io_dip(23)" LOCATE = SITE "P57" LEVEL 1;
-COMP "io_seg[0]" LOCATE = SITE "P5" LEVEL 1;
-COMP "spi_sck" LOCATE = SITE "P43" LEVEL 1;
-COMP "io_seg[1]" LOCATE = SITE "P8" LEVEL 1;
-COMP "io_seg[2]" LOCATE = SITE "P144" LEVEL 1;
-COMP "clk" LOCATE = SITE "P56" LEVEL 1;
-COMP "io_seg[3]" LOCATE = SITE "P143" LEVEL 1;
-COMP "avr_rx_busy" LOCATE = SITE "P39" LEVEL 1;
-COMP "io_seg[4]" LOCATE = SITE "P2" LEVEL 1;
-COMP "io_seg[5]" LOCATE = SITE "P6" LEVEL 1;
-COMP "io_seg[6]" LOCATE = SITE "P1" LEVEL 1;
-COMP "io_seg[7]" LOCATE = SITE "P141" LEVEL 1;
-COMP "io_button(1)" LOCATE = SITE "P140" LEVEL 1;
-COMP "io_button(2)" LOCATE = SITE "P139" LEVEL 1;
-COMP "io_button(3)" LOCATE = SITE "P142" LEVEL 1;
-COMP "io_led[10]" LOCATE = SITE "P82" LEVEL 1;
-COMP "io_button(4)" LOCATE = SITE "P138" LEVEL 1;
-COMP "io_led[11]" LOCATE = SITE "P83" LEVEL 1;
-COMP "io_led[12]" LOCATE = SITE "P80" LEVEL 1;
-COMP "io_led[20]" LOCATE = SITE "P22" LEVEL 1;
-COMP "spi_mosi" LOCATE = SITE "P44" LEVEL 1;
-COMP "io_led[13]" LOCATE = SITE "P81" LEVEL 1;
-COMP "io_led[21]" LOCATE = SITE "P23" LEVEL 1;
-COMP "io_led[14]" LOCATE = SITE "P11" LEVEL 1;
-COMP "io_led[22]" LOCATE = SITE "P24" LEVEL 1;
-COMP "io_led[15]" LOCATE = SITE "P14" LEVEL 1;
-COMP "io_led[23]" LOCATE = SITE "P26" LEVEL 1;
-COMP "io_dip[10]" LOCATE = SITE "P105" LEVEL 1;
-TIMEGRP clk = BEL "M_state_q_FSM_FFd4" BEL "M_state_q_FSM_FFd1" BEL
-        "M_state_q_FSM_FFd3" BEL "M_state_q_FSM_FFd2" BEL "M_test_counter_q_0"
-        BEL "M_test_counter_q_1" BEL "M_test_counter_q_2" BEL
-        "M_test_counter_q_3" BEL "M_test_counter_q_4" BEL "M_test_counter_q_5"
-        BEL "M_test_counter_q_6" BEL "M_test_counter_q_7" BEL
-        "M_test_counter_q_7_1" BEL "M_state_q_FSM_FFd3_1" BEL
-        "M_state_q_FSM_FFd4_1" BEL "M_test_counter_q_7_2" BEL
-        "M_state_q_FSM_FFd3_2" BEL "M_state_q_FSM_FFd4_2" BEL "clk_BUFGP/BUFG"
-        BEL "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
-        "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0";
+TIMEGRP clk = BEL "M_state_q_0" BEL "M_state_q_1" BEL "M_state_q_2" BEL
+        "seg/ctr/M_ctr_q_0" BEL "seg/ctr/M_ctr_q_1" BEL "seg/ctr/M_ctr_q_2"
+        BEL "seg/ctr/M_ctr_q_3" BEL "seg/ctr/M_ctr_q_4" BEL
+        "seg/ctr/M_ctr_q_5" BEL "seg/ctr/M_ctr_q_6" BEL "seg/ctr/M_ctr_q_7"
+        BEL "seg/ctr/M_ctr_q_8" BEL "seg/ctr/M_ctr_q_9" BEL
+        "seg/ctr/M_ctr_q_10" BEL "seg/ctr/M_ctr_q_11" BEL "seg/ctr/M_ctr_q_12"
+        BEL "seg/ctr/M_ctr_q_13" BEL "seg/ctr/M_ctr_q_14" BEL
+        "seg/ctr/M_ctr_q_15" BEL "seg/ctr/M_ctr_q_16" BEL "seg/ctr/M_ctr_q_17"
+        BEL "clk_BUFGP/BUFG" BEL "reset_cond/M_stage_q_3" BEL
+        "reset_cond/M_stage_q_2" BEL "reset_cond/M_stage_q_1" BEL
+        "reset_cond/M_stage_q_0" BEL "test_adder/M_state_q_FSM_FFd1" BEL
+        "test_adder/M_state_q_FSM_FFd2" BEL "test_bool/M_state_q_FSM_FFd1" BEL
+        "test_bool/M_state_q_FSM_FFd2" BEL "test_shifter/M_state_q_FSM_FFd1"
+        BEL "test_shifter/M_state_q_FSM_FFd2" BEL
+        "test_compare/M_state_q_FSM_FFd1" BEL
+        "test_compare/M_state_q_FSM_FFd2";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 
