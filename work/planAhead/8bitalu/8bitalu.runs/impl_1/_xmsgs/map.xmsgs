@@ -11,7 +11,7 @@
 <msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">avr_rx_busy_IBUF</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">8</arg> more times for the following (max. 5 shown):
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">7</arg> more times for the following (max. 5 shown):
 <arg fmt="%s" index="3">io_dip(23)_IBUF,
 io_dip(22)_IBUF,
 spi_mosi_IBUF,

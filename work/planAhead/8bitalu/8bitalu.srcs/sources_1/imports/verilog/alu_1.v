@@ -17,7 +17,7 @@ module alu_1 (
   reg [8-1:0] M_adder_a;
   reg [8-1:0] M_adder_b;
   reg [6-1:0] M_adder_alufn;
-  adder_8 adder (
+  adder_9 adder (
     .a(M_adder_a),
     .b(M_adder_b),
     .alufn(M_adder_alufn),
@@ -28,7 +28,7 @@ module alu_1 (
   reg [8-1:0] M_boolean_a;
   reg [8-1:0] M_boolean_b;
   reg [6-1:0] M_boolean_alufn;
-  boolean_9 boolean (
+  boolean_10 boolean (
     .a(M_boolean_a),
     .b(M_boolean_b),
     .alufn(M_boolean_alufn),
@@ -39,7 +39,7 @@ module alu_1 (
   reg [8-1:0] M_compare_a;
   reg [8-1:0] M_compare_b;
   reg [6-1:0] M_compare_alufn;
-  compare_10 compare (
+  compare_11 compare (
     .a(M_compare_a),
     .b(M_compare_b),
     .alufn(M_compare_alufn),
@@ -50,11 +50,22 @@ module alu_1 (
   reg [8-1:0] M_shifter_a;
   reg [8-1:0] M_shifter_b;
   reg [6-1:0] M_shifter_alufn;
-  shifter_11 shifter (
+  shifter_12 shifter (
     .a(M_shifter_a),
     .b(M_shifter_b),
     .alufn(M_shifter_alufn),
     .out(M_shifter_out)
+  );
+  
+  wire [8-1:0] M_multiplier_out;
+  reg [8-1:0] M_multiplier_a;
+  reg [8-1:0] M_multiplier_b;
+  reg [6-1:0] M_multiplier_alufn;
+  multiplier_13 multiplier (
+    .a(M_multiplier_a),
+    .b(M_multiplier_b),
+    .alufn(M_multiplier_alufn),
+    .out(M_multiplier_out)
   );
   
   always @* begin
@@ -71,6 +82,9 @@ module alu_1 (
     M_shifter_a = a;
     M_shifter_b = b;
     M_shifter_alufn = alufn;
+    M_multiplier_a = a;
+    M_multiplier_b = b;
+    M_multiplier_alufn = alufn;
     
     case (alufn)
       6'h00: begin
@@ -78,6 +92,9 @@ module alu_1 (
       end
       6'h01: begin
         out = M_adder_out;
+      end
+      6'h02: begin
+        out = M_multiplier_out;
       end
       6'h18: begin
         out = M_boolean_out;

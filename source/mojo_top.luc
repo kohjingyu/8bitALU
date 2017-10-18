@@ -1,6 +1,7 @@
 global Inst {
   const ADD = 6h0;
   const SUB = 6h1;
+  const MUL = 6h2;
   const AND = 6h18;
   const OR = 6h1e;
   const XOR = 6h16;
@@ -43,6 +44,7 @@ module mojo_top (
   test_compare test_compare; 
   test_bool test_bool;
   test_shifter test_shifter;
+  test_multiplier test_multiplier;
        
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -67,6 +69,8 @@ module mojo_top (
     test_bool.rst = rst;
     test_shifter.clk = clk;
     test_shifter.rst = rst;
+    test_multiplier.clk = clk;
+    test_multiplier.rst = rst;    
     
     led = 8h00;             // turn LEDs off
     spi_miso = bz;          // not using SPI
@@ -94,6 +98,7 @@ module mojo_top (
     test_compare.start = 0;
     test_bool.start = 0;
     test_shifter.start = 0;
+    test_multiplier.start = 0;
         
     // Automated testing
     case(state.q) {
@@ -105,11 +110,11 @@ module mojo_top (
         
         if(test_adder.status == 1) {
           // PASS
-          seg.values = {4d10, 4d11, 4d5, 4d5};
+          seg.values = {4d10, 4d11, 4d5, 4d5}; //PASS
         }
         else if(test_adder.status == 2) {
           // FAIL
-          seg.values = {4d11, 4d0, 4d0, 4d13};
+          seg.values = {4d11, 4d0, 4d0, 4d13}; //ADDF(ail)
         }
         
       state.COMPARE:
@@ -117,11 +122,11 @@ module mojo_top (
         
         if(test_compare.status == 1) {
           // PASS
-          seg.values = {4d10, 4d11, 4d5, 4d5};
+          seg.values = {4d10, 4d11, 4d5, 4d5}; //PASS
         }
         else if(test_compare.status == 2) {
           // FAIL
-          seg.values = {4d14, 4d0, 4d10, 4d13};
+          seg.values = {4d14, 4d0, 4d10, 4d13}; //COPF(ail)
         }
         
       state.BOOL:
@@ -129,11 +134,11 @@ module mojo_top (
         
         if(test_bool.status == 1) {
           // PASS
-          seg.values = {4d10, 4d11, 4d5, 4d5};
+          seg.values = {4d10, 4d11, 4d5, 4d5}; //PASS
         }
         else if(test_bool.status == 2) {
           // FAIL
-          seg.values = {4d8, 4d0, 4d0, 4d13};
+          seg.values = {4d8, 4d0, 4d0, 4d13}; //BOOF(ail)
         }
 
       state.SHIFTER:
@@ -141,30 +146,46 @@ module mojo_top (
         
         if(test_shifter.status == 1) {
           // PASS
-          seg.values = {4d10, 4d11, 4d5, 4d5};
+          seg.values = {4d10, 4d11, 4d5, 4d5}; //PASS
         }
         else if(test_shifter.status == 2) {
           // FAIL
-          seg.values = {4d5, 4d13, 4d13, 4d15};
+          seg.values = {4d5, 4d12, 4d1, 4d13}; //SHIF(ail)
         }
+        
+      state.MULTIPLY:
+        test_multiplier.start = 1;
+        
+        if(test_multiplier.status == 1) {
+          // PASS
+          seg.values = {4d10, 4d11, 4d5, 4d5}; //PASS
+        }
+        else if(test_multiplier.status == 2) {
+          // FAIL
+          seg.values = {4d2, 4d3, 4d4, 4d13}; //NULF(ail)
+        }      
     }
     
     // automated testing triggered on press of io_button[0] (up)
-    if(io_button[0]) {
+    if(io_button[0]) { //up
         test_counter.d = 0;
         state.d = state.ADDER;
     }
-    if(io_button[1]) {
+    if(io_button[1]) { //center
         test_counter.d = 0;
         state.d = state.COMPARE;
     }
-    if(io_button[2]) {
+    if(io_button[2]) { //down
         test_counter.d = 0;
         state.d = state.BOOL;
     }
-    if(io_button[3]) {
+    if(io_button[3]) { //left
         test_counter.d = 0;
         state.d = state.SHIFTER;
+    }
+    if(io_button[4]) { //right
+        test_counter.d = 0;
+        state.d = state.MULTIPLY;
     }
     // TODO: Fail case, multiply case
     

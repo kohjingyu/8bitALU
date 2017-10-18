@@ -14,8 +14,8 @@ module shifter (
       Inst.SHR:
         out = a >> b[2:0];  // shift right
       Inst.SRA:
-        out = a >>> b[2:0]; // shift right arithmetic
-        
+        out = a >> b[2:0]; // shift right arithmetic
+        out[7] = a[7];
     }
 
   }

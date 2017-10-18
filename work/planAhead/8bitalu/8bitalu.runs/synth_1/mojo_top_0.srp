@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> Reading design: mojo_top_0.prj
 
@@ -53,35 +53,39 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/shifter_11.v" into library work
-Parsing module <shifter_11>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/seven_seg_17.v" into library work
-Parsing module <seven_seg_17>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/decoder_18.v" into library work
-Parsing module <decoder_18>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/counter_16.v" into library work
-Parsing module <counter_16>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/compare_10.v" into library work
-Parsing module <compare_10>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/boolean_9.v" into library work
-Parsing module <boolean_9>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/adder_8.v" into library work
-Parsing module <adder_8>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_shifter_5.v" into library work
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/shifter_12.v" into library work
+Parsing module <shifter_12>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/seven_seg_20.v" into library work
+Parsing module <seven_seg_20>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/multiplier_13.v" into library work
+Parsing module <multiplier_13>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/decoder_21.v" into library work
+Parsing module <decoder_21>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/counter_19.v" into library work
+Parsing module <counter_19>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/compare_11.v" into library work
+Parsing module <compare_11>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/boolean_10.v" into library work
+Parsing module <boolean_10>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/adder_9.v" into library work
+Parsing module <adder_9>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_shifter_5.v" into library work
 Parsing module <test_shifter_5>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_compare_3.v" into library work
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_multiplier_6.v" into library work
+Parsing module <test_multiplier_6>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_compare_3.v" into library work
 Parsing module <test_compare_3>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_bool_4.v" into library work
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_bool_4.v" into library work
 Parsing module <test_bool_4>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_adder_2.v" into library work
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_adder_2.v" into library work
 Parsing module <test_adder_2>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/reset_conditioner_6.v" into library work
-Parsing module <reset_conditioner_6>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/multi_seven_seg_7.v" into library work
-Parsing module <multi_seven_seg_7>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/alu_1.v" into library work
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/reset_conditioner_7.v" into library work
+Parsing module <reset_conditioner_7>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/multi_seven_seg_8.v" into library work
+Parsing module <multi_seven_seg_8>.
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/alu_1.v" into library work
 Parsing module <alu_1>.
-Analyzing Verilog file "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Analyzing Verilog file "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
 =========================================================================
@@ -92,13 +96,15 @@ Elaborating module <mojo_top_0>.
 
 Elaborating module <alu_1>.
 
-Elaborating module <adder_8>.
+Elaborating module <adder_9>.
 
-Elaborating module <boolean_9>.
+Elaborating module <boolean_10>.
 
-Elaborating module <compare_10>.
+Elaborating module <compare_11>.
 
-Elaborating module <shifter_11>.
+Elaborating module <shifter_12>.
+
+Elaborating module <multiplier_13>.
 
 Elaborating module <test_adder_2>.
 
@@ -108,23 +114,24 @@ Elaborating module <test_bool_4>.
 
 Elaborating module <test_shifter_5>.
 
-Elaborating module <reset_conditioner_6>.
+Elaborating module <test_multiplier_6>.
 
-Elaborating module <multi_seven_seg_7>.
+Elaborating module <reset_conditioner_7>.
 
-Elaborating module <counter_16>.
+Elaborating module <multi_seven_seg_8>.
 
-Elaborating module <seven_seg_17>.
+Elaborating module <counter_19>.
 
-Elaborating module <decoder_18>.
+Elaborating module <seven_seg_20>.
+
+Elaborating module <decoder_21>.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mojo_top_0>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/mojo_top_0.v".
-WARNING:Xst:647 - Input <io_button<4:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <io_dip<23:22>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -137,42 +144,43 @@ WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved
     Found 4x16-bit Read Only RAM for signal <PWR_1_o_PWR_1_o_mux_9_OUT>
     Found 4x16-bit Read Only RAM for signal <PWR_1_o_PWR_1_o_mux_13_OUT>
     Found 4x16-bit Read Only RAM for signal <PWR_1_o_PWR_1_o_mux_17_OUT>
-    Found 8x4-bit Read Only RAM for signal <_n0098>
-    Found 16-bit 7-to-1 multiplexer for signal <M_seg_values> created at line 155.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 120
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 120
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 120
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 120
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 120
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 120
+    Found 4x16-bit Read Only RAM for signal <PWR_1_o_PWR_1_o_mux_21_OUT>
+    Found 8x5-bit Read Only RAM for signal <_n0111>
+    Found 16-bit 7-to-1 multiplexer for signal <M_seg_values> created at line 169.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 131
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 131
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 131
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 131
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 131
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 131
     Summary:
-	inferred   5 RAM(s).
+	inferred   6 RAM(s).
 	inferred   3 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 	inferred   6 Tristate(s).
 Unit <mojo_top_0> synthesized.
 
 Synthesizing Unit <alu_1>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/alu_1.v".
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/alu_1.v".
     Summary:
 	no macro.
 Unit <alu_1> synthesized.
 
-Synthesizing Unit <adder_8>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/adder_8.v".
+Synthesizing Unit <adder_9>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/adder_9.v".
     Found 8-bit subtractor for signal <a[7]_b[7]_sub_2_OUT> created at line 24.
     Found 8-bit adder for signal <a[7]_b[7]_add_0_OUT> created at line 21.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-Unit <adder_8> synthesized.
+Unit <adder_9> synthesized.
 
-Synthesizing Unit <boolean_9>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/boolean_9.v".
+Synthesizing Unit <boolean_10>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/boolean_10.v".
     Summary:
-Unit <boolean_9> synthesized.
+Unit <boolean_10> synthesized.
 
-Synthesizing Unit <compare_10>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/compare_10.v".
+Synthesizing Unit <compare_11>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/compare_11.v".
     Found 1-bit 4-to-1 multiplexer for signal <_n0030> created at line 11.
     Found 8-bit comparator equal for signal <a[7]_b[7]_equal_1_o> created at line 21
     Found 8-bit comparator greater for signal <a[7]_b[7]_LessThan_2_o> created at line 24
@@ -180,28 +188,68 @@ Synthesizing Unit <compare_10>.
     Summary:
 	inferred   3 Comparator(s).
 	inferred   2 Multiplexer(s).
-Unit <compare_10> synthesized.
+Unit <compare_11> synthesized.
 
-Synthesizing Unit <shifter_11>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/shifter_11.v".
+Synthesizing Unit <shifter_12>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/shifter_12.v".
 WARNING:Xst:647 - Input <b<7:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 8-bit shifter logical left for signal <a[7]_b[2]_shift_left_0_OUT> created at line 21
     Found 8-bit shifter logical right for signal <a[7]_b[2]_shift_right_1_OUT> created at line 24
-    Found 8-bit 4-to-1 multiplexer for signal <_n0027> created at line 11.
+    Found 8-bit 4-to-1 multiplexer for signal <_n0028> created at line 11.
     Summary:
 	inferred   2 Multiplexer(s).
 	inferred   2 Combinational logic shifter(s).
-Unit <shifter_11> synthesized.
+Unit <shifter_12> synthesized.
+
+Synthesizing Unit <multiplier_13>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/multiplier_13.v".
+    Found 8x8-bit multiplier for signal <n0010> created at line 21.
+    Summary:
+	inferred   1 Multiplier(s).
+Unit <multiplier_13> synthesized.
+
+Synthesizing Unit <div_8u_8u>.
+    Related source file is "".
+    Found 16-bit adder for signal <n0292> created at line 0.
+    Found 16-bit adder for signal <GND_9_o_b[7]_add_1_OUT> created at line 0.
+    Found 15-bit adder for signal <n0296> created at line 0.
+    Found 15-bit adder for signal <GND_9_o_b[7]_add_3_OUT> created at line 0.
+    Found 14-bit adder for signal <n0300> created at line 0.
+    Found 14-bit adder for signal <GND_9_o_b[7]_add_5_OUT> created at line 0.
+    Found 13-bit adder for signal <n0304> created at line 0.
+    Found 13-bit adder for signal <GND_9_o_b[7]_add_7_OUT> created at line 0.
+    Found 12-bit adder for signal <n0308> created at line 0.
+    Found 12-bit adder for signal <GND_9_o_b[7]_add_9_OUT> created at line 0.
+    Found 11-bit adder for signal <n0312> created at line 0.
+    Found 11-bit adder for signal <GND_9_o_b[7]_add_11_OUT> created at line 0.
+    Found 10-bit adder for signal <n0316> created at line 0.
+    Found 10-bit adder for signal <GND_9_o_b[7]_add_13_OUT> created at line 0.
+    Found 9-bit adder for signal <n0320> created at line 0.
+    Found 9-bit adder for signal <GND_9_o_b[7]_add_15_OUT> created at line 0.
+    Found 16-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 15-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 14-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 13-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 12-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 11-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 10-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 9-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Found 8-bit comparator lessequal for signal <BUS_0009> created at line 0
+    Summary:
+	inferred  16 Adder/Subtractor(s).
+	inferred   9 Comparator(s).
+	inferred  57 Multiplexer(s).
+Unit <div_8u_8u> synthesized.
 
 Synthesizing Unit <test_adder_2>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_adder_2.v".
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_adder_2.v".
+    Found 4-bit register for signal <M_test_counter_q>.
     Found 2-bit register for signal <M_state_q>.
-    Found 3-bit register for signal <M_test_counter_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 15                                             |
-    | Inputs             | 7                                              |
+    | Transitions        | 44                                             |
+    | Inputs             | 10                                             |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
@@ -211,22 +259,24 @@ Synthesizing Unit <test_adder_2>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <M_test_counter_d> created at line 86.
+    Found 4-bit adder for signal <M_test_counter_d> created at line 174.
+    Found 16x22-bit Read Only RAM for signal <_n0084>
     Summary:
+	inferred   1 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred   3 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <test_adder_2> synthesized.
 
 Synthesizing Unit <test_compare_3>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_compare_3.v".
-    Found 3-bit register for signal <M_test_counter_q>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_compare_3.v".
     Found 2-bit register for signal <M_state_q>.
+    Found 4-bit register for signal <M_test_counter_q>.
     Found finite state machine <FSM_1> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 15                                             |
+    | Transitions        | 32                                             |
     | Inputs             | 7                                              |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
@@ -237,23 +287,27 @@ Synthesizing Unit <test_compare_3>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <M_test_counter_d> created at line 86.
+    Found 4-bit adder for signal <M_test_counter_d> created at line 166.
+    Found 16x6-bit Read Only RAM for signal <M_test_counter_q[3]_GND_11_o_wide_mux_29_OUT>
+    Found 16x8-bit Read Only RAM for signal <M_test_counter_q[3]_GND_11_o_wide_mux_30_OUT>
+    Found 16x8-bit Read Only RAM for signal <M_test_counter_q[3]_GND_11_o_wide_mux_31_OUT>
     Summary:
+	inferred   3 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred   3 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <test_compare_3> synthesized.
 
 Synthesizing Unit <test_bool_4>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_bool_4.v".
-    Found 3-bit register for signal <M_test_counter_q>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_bool_4.v".
     Found 2-bit register for signal <M_state_q>.
+    Found 4-bit register for signal <M_test_counter_q>.
     Found finite state machine <FSM_2> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 15                                             |
-    | Inputs             | 7                                              |
+    | Transitions        | 31                                             |
+    | Inputs             | 11                                             |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
@@ -263,23 +317,27 @@ Synthesizing Unit <test_bool_4>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <M_test_counter_d> created at line 86.
+    Found 4-bit adder for signal <M_test_counter_d> created at line 131.
+    Found 16x6-bit Read Only RAM for signal <M_test_counter_q[3]_GND_12_o_wide_mux_21_OUT>
+    Found 16x8-bit Read Only RAM for signal <M_test_counter_q[3]_GND_12_o_wide_mux_22_OUT>
+    Found 16x8-bit Read Only RAM for signal <M_test_counter_q[3]_GND_12_o_wide_mux_23_OUT>
     Summary:
+	inferred   3 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred   3 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <test_bool_4> synthesized.
 
 Synthesizing Unit <test_shifter_5>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_shifter_5.v".
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_shifter_5.v".
     Found 2-bit register for signal <M_state_q>.
-    Found 3-bit register for signal <M_test_counter_q>.
+    Found 4-bit register for signal <M_test_counter_q>.
     Found finite state machine <FSM_3> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 15                                             |
-    | Inputs             | 7                                              |
+    | Transitions        | 42                                             |
+    | Inputs             | 11                                             |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
@@ -289,82 +347,137 @@ Synthesizing Unit <test_shifter_5>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <M_test_counter_d> created at line 86.
+    Found 4-bit adder for signal <M_test_counter_d> created at line 142.
+    Found 16x6-bit Read Only RAM for signal <M_test_counter_q[3]_GND_13_o_wide_mux_23_OUT>
+    Found 16x8-bit Read Only RAM for signal <M_test_counter_q[3]_GND_13_o_wide_mux_24_OUT>
+    Found 16x8-bit Read Only RAM for signal <M_test_counter_q[3]_GND_13_o_wide_mux_25_OUT>
     Summary:
+	inferred   3 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred   3 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <test_shifter_5> synthesized.
 
-Synthesizing Unit <reset_conditioner_6>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/reset_conditioner_6.v".
+Synthesizing Unit <test_multiplier_6>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/test_multiplier_6.v".
+    Found 4-bit register for signal <M_test_counter_q>.
+    Found 2-bit register for signal <M_state_q>.
+    Found finite state machine <FSM_4> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 43                                             |
+    | Inputs             | 12                                             |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <M_test_counter_d> created at line 150.
+    Found 16x6-bit Read Only RAM for signal <M_test_counter_q[3]_GND_14_o_wide_mux_25_OUT>
+    Found 16x8-bit Read Only RAM for signal <M_test_counter_q[3]_GND_14_o_wide_mux_26_OUT>
+    Found 16x8-bit Read Only RAM for signal <M_test_counter_q[3]_GND_14_o_wide_mux_27_OUT>
+    Summary:
+	inferred   3 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <test_multiplier_6> synthesized.
+
+Synthesizing Unit <reset_conditioner_7>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/reset_conditioner_7.v".
     Found 4-bit register for signal <M_stage_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
-Unit <reset_conditioner_6> synthesized.
+Unit <reset_conditioner_7> synthesized.
 
-Synthesizing Unit <multi_seven_seg_7>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/multi_seven_seg_7.v".
-    Found 4-bit adder for signal <M_ctr_value[1]_GND_12_o_add_0_OUT> created at line 48.
+Synthesizing Unit <multi_seven_seg_8>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/multi_seven_seg_8.v".
+    Found 4-bit adder for signal <M_ctr_value[1]_GND_16_o_add_0_OUT> created at line 48.
     Found 31-bit shifter logical right for signal <n0010> created at line 48
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Combinational logic shifter(s).
-Unit <multi_seven_seg_7> synthesized.
+Unit <multi_seven_seg_8> synthesized.
 
-Synthesizing Unit <counter_16>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/counter_16.v".
+Synthesizing Unit <counter_19>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/counter_19.v".
     Found 18-bit register for signal <M_ctr_q>.
-    Found 18-bit adder for signal <M_ctr_q[17]_GND_13_o_add_0_OUT> created at line 35.
+    Found 18-bit adder for signal <M_ctr_q[17]_GND_17_o_add_0_OUT> created at line 35.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  18 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
-Unit <counter_16> synthesized.
+Unit <counter_19> synthesized.
 
-Synthesizing Unit <seven_seg_17>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/seven_seg_17.v".
+Synthesizing Unit <seven_seg_20>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/seven_seg_20.v".
     Found 16x7-bit Read Only RAM for signal <segs>
     Summary:
 	inferred   1 RAM(s).
-Unit <seven_seg_17> synthesized.
+Unit <seven_seg_20> synthesized.
 
-Synthesizing Unit <decoder_18>.
-    Related source file is "H:/8bitalu/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/decoder_18.v".
+Synthesizing Unit <decoder_21>.
+    Related source file is "C:/Users/1002413/Documents/8bitALU-master/8bitALU-master/work/planAhead/8bitalu/8bitalu.srcs/sources_1/imports/verilog/decoder_21.v".
     Summary:
 	no macro.
-Unit <decoder_18> synthesized.
+Unit <decoder_21> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 6
+# RAMs                                                 : 20
+ 16x22-bit single-port Read Only RAM                   : 1
+ 16x6-bit single-port Read Only RAM                    : 4
  16x7-bit single-port Read Only RAM                    : 1
- 4x16-bit single-port Read Only RAM                    : 4
- 8x4-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 10
+ 16x8-bit single-port Read Only RAM                    : 8
+ 4x16-bit single-port Read Only RAM                    : 5
+ 8x5-bit single-port Read Only RAM                     : 1
+# Multipliers                                          : 2
+ 8x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 43
+ 10-bit adder                                          : 4
+ 11-bit adder                                          : 4
+ 12-bit adder                                          : 4
+ 13-bit adder                                          : 4
+ 14-bit adder                                          : 4
+ 15-bit adder                                          : 4
+ 16-bit adder                                          : 4
  18-bit adder                                          : 1
- 3-bit adder                                           : 4
- 4-bit adder                                           : 1
+ 4-bit adder                                           : 6
  8-bit adder                                           : 2
  8-bit subtractor                                      : 2
-# Registers                                            : 7
+ 9-bit adder                                           : 4
+# Registers                                            : 8
  18-bit register                                       : 1
- 3-bit register                                        : 5
- 4-bit register                                        : 1
-# Comparators                                          : 6
+ 3-bit register                                        : 1
+ 4-bit register                                        : 6
+# Comparators                                          : 24
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator lessequal                           : 2
+ 12-bit comparator lessequal                           : 2
+ 13-bit comparator lessequal                           : 2
+ 14-bit comparator lessequal                           : 2
+ 15-bit comparator lessequal                           : 2
+ 16-bit comparator lessequal                           : 2
  8-bit comparator equal                                : 2
  8-bit comparator greater                              : 2
- 8-bit comparator lessequal                            : 2
-# Multiplexers                                         : 19
- 1-bit 2-to-1 multiplexer                              : 2
+ 8-bit comparator lessequal                            : 4
+ 9-bit comparator lessequal                            : 2
+# Multiplexers                                         : 141
+ 1-bit 2-to-1 multiplexer                              : 114
  1-bit 4-to-1 multiplexer                              : 2
  16-bit 7-to-1 multiplexer                             : 1
  18-bit 2-to-1 multiplexer                             : 1
- 3-bit 2-to-1 multiplexer                              : 1
- 8-bit 2-to-1 multiplexer                              : 10
+ 3-bit 2-to-1 multiplexer                              : 2
+ 6-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 14
  8-bit 4-to-1 multiplexer                              : 2
 # Logic shifters                                       : 5
  31-bit shifter logical right                          : 1
@@ -372,7 +485,7 @@ Macro Statistics
  8-bit shifter logical right                           : 2
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
-# FSMs                                                 : 4
+# FSMs                                                 : 5
 # Xors                                                 : 2
  8-bit xor2                                            : 2
 
@@ -383,9 +496,9 @@ Macro Statistics
 =========================================================================
 
 
-Synthesizing (advanced) Unit <counter_16>.
+Synthesizing (advanced) Unit <counter_19>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
-Unit <counter_16> synthesized (advanced).
+Unit <counter_19> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mojo_top_0>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_PWR_1_o_PWR_1_o_mux_5_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -432,12 +545,23 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_PWR_1_o_PWR_1_o_mux_17_OUT> will be 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0098> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_PWR_1_o_PWR_1_o_mux_21_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 8-word x 4-bit                      |          |
+    |     aspect ratio   | 4-word x 16-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_multiplier_status> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0111> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 5-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
     |     addrA          | connected to signal <M_state_q>     |          |
     |     diA            | connected to signal <GND>           |          |
@@ -445,7 +569,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0098> will be implemented on LUTs 
     -----------------------------------------------------------------------
 Unit <mojo_top_0> synthesized (advanced).
 
-Synthesizing (advanced) Unit <seven_seg_17>.
+Synthesizing (advanced) Unit <seven_seg_20>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -457,57 +581,219 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs ei
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <segs>          |          |
     -----------------------------------------------------------------------
-Unit <seven_seg_17> synthesized (advanced).
+Unit <seven_seg_20> synthesized (advanced).
 
 Synthesizing (advanced) Unit <test_adder_2>.
 The following registers are absorbed into counter <M_test_counter_q>: 1 register on signal <M_test_counter_q>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0084> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 22-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
 Unit <test_adder_2> synthesized (advanced).
 
 Synthesizing (advanced) Unit <test_bool_4>.
 The following registers are absorbed into counter <M_test_counter_q>: 1 register on signal <M_test_counter_q>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_12_o_wide_mux_21_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 6-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_12_o_wide_mux_22_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_12_o_wide_mux_23_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
 Unit <test_bool_4> synthesized (advanced).
 
 Synthesizing (advanced) Unit <test_compare_3>.
 The following registers are absorbed into counter <M_test_counter_q>: 1 register on signal <M_test_counter_q>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_11_o_wide_mux_29_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 6-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_11_o_wide_mux_30_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_11_o_wide_mux_31_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
 Unit <test_compare_3> synthesized (advanced).
+
+Synthesizing (advanced) Unit <test_multiplier_6>.
+The following registers are absorbed into counter <M_test_counter_q>: 1 register on signal <M_test_counter_q>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_14_o_wide_mux_25_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 6-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_14_o_wide_mux_26_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_14_o_wide_mux_27_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <test_multiplier_6> synthesized (advanced).
 
 Synthesizing (advanced) Unit <test_shifter_5>.
 The following registers are absorbed into counter <M_test_counter_q>: 1 register on signal <M_test_counter_q>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_13_o_wide_mux_23_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 6-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_13_o_wide_mux_24_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_test_counter_q[3]_GND_13_o_wide_mux_25_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_test_counter_q> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
 Unit <test_shifter_5> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 6
+# RAMs                                                 : 20
+ 16x22-bit single-port distributed Read Only RAM       : 1
+ 16x6-bit single-port distributed Read Only RAM        : 4
  16x7-bit single-port distributed Read Only RAM        : 1
- 4x16-bit single-port distributed Read Only RAM        : 4
- 8x4-bit single-port distributed Read Only RAM         : 1
-# Adders/Subtractors                                   : 5
+ 16x8-bit single-port distributed Read Only RAM        : 8
+ 4x16-bit single-port distributed Read Only RAM        : 5
+ 8x5-bit single-port distributed Read Only RAM         : 1
+# Multipliers                                          : 2
+ 8x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 21
  4-bit adder                                           : 1
  8-bit adder                                           : 2
+ 8-bit adder carry in                                  : 16
  8-bit subtractor                                      : 2
-# Counters                                             : 5
+# Counters                                             : 6
  18-bit up counter                                     : 1
- 3-bit up counter                                      : 4
+ 4-bit up counter                                      : 5
 # Registers                                            : 7
  Flip-Flops                                            : 7
-# Comparators                                          : 6
+# Comparators                                          : 24
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator lessequal                           : 2
+ 12-bit comparator lessequal                           : 2
+ 13-bit comparator lessequal                           : 2
+ 14-bit comparator lessequal                           : 2
+ 15-bit comparator lessequal                           : 2
+ 16-bit comparator lessequal                           : 2
  8-bit comparator equal                                : 2
  8-bit comparator greater                              : 2
- 8-bit comparator lessequal                            : 2
-# Multiplexers                                         : 18
- 1-bit 2-to-1 multiplexer                              : 2
+ 8-bit comparator lessequal                            : 4
+ 9-bit comparator lessequal                            : 2
+# Multiplexers                                         : 140
+ 1-bit 2-to-1 multiplexer                              : 114
  1-bit 4-to-1 multiplexer                              : 2
  16-bit 7-to-1 multiplexer                             : 1
- 3-bit 2-to-1 multiplexer                              : 1
- 8-bit 2-to-1 multiplexer                              : 10
+ 3-bit 2-to-1 multiplexer                              : 2
+ 6-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 14
  8-bit 4-to-1 multiplexer                              : 2
 # Logic shifters                                       : 5
  31-bit shifter logical right                          : 1
  8-bit shifter logical left                            : 2
  8-bit shifter logical right                           : 2
-# FSMs                                                 : 4
+# FSMs                                                 : 5
 # Xors                                                 : 2
  8-bit xor2                                            : 2
 
@@ -556,6 +842,17 @@ Optimizing FSM <test_shifter/FSM_3> on signal <M_state_q[1:2]> with user encodin
  11    | 11
  10    | 10
 -------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <test_multiplier/FSM_4> on signal <M_state_q[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 11
+ 10    | 10
+-------------------
+WARNING:Xst:2973 - All outputs of instance <mul/a[7]_b[7]_div_1> of block <div_8u_8u> are unconnected in block <test_multiplier_6>. Underlying logic will be removed.
 
 Optimizing unit <mojo_top_0> ...
 
@@ -567,14 +864,25 @@ Optimizing unit <test_bool_4> ...
 
 Optimizing unit <test_shifter_5> ...
 
+Optimizing unit <test_multiplier_6> ...
+
+Optimizing unit <div_8u_8u> ...
+
 Optimizing unit <alu_1> ...
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 4 FFs/Latches, which will be removed : <test_adder/M_test_counter_q_0> <test_compare/M_test_counter_q_0> <test_bool/M_test_counter_q_0> <test_shifter/M_test_counter_q_0> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 4 FFs/Latches, which will be removed : <test_adder/M_test_counter_q_1> <test_compare/M_test_counter_q_1> <test_bool/M_test_counter_q_1> <test_shifter/M_test_counter_q_1> 
-INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following 4 FFs/Latches, which will be removed : <test_adder/M_test_counter_q_2> <test_compare/M_test_counter_q_2> <test_bool/M_test_counter_q_2> <test_shifter/M_test_counter_q_2> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <test_adder/M_test_counter_q_0> <test_compare/M_test_counter_q_0> <test_bool/M_test_counter_q_0> <test_shifter/M_test_counter_q_0> <test_multiplier/M_test_counter_q_0> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <test_adder/M_test_counter_q_1> <test_compare/M_test_counter_q_1> <test_bool/M_test_counter_q_1> <test_shifter/M_test_counter_q_1> <test_multiplier/M_test_counter_q_1> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <test_adder/M_test_counter_q_2> <test_compare/M_test_counter_q_2> <test_bool/M_test_counter_q_2> <test_shifter/M_test_counter_q_2> <test_multiplier/M_test_counter_q_2> 
+INFO:Xst:2261 - The FF/Latch <seg/ctr/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following 5 FFs/Latches, which will be removed : <test_adder/M_test_counter_q_3> <test_compare/M_test_counter_q_3> <test_bool/M_test_counter_q_3> <test_shifter/M_test_counter_q_3> <test_multiplier/M_test_counter_q_3> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 4.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 6.
+FlipFlop seg/ctr/M_ctr_q_0 has been replicated 2 time(s)
+FlipFlop seg/ctr/M_ctr_q_1 has been replicated 2 time(s)
+FlipFlop seg/ctr/M_ctr_q_2 has been replicated 2 time(s)
+FlipFlop seg/ctr/M_ctr_q_3 has been replicated 2 time(s)
+FlipFlop test_multiplier/M_state_q_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop test_multiplier/M_state_q_FSM_FFd2 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -586,8 +894,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 33
- Flip-Flops                                            : 33
+# Registers                                            : 45
+ Flip-Flops                                            : 45
 
 =========================================================================
 
@@ -610,30 +918,31 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 275
-#      GND                         : 4
+# BELS                             : 377
+#      GND                         : 7
 #      INV                         : 2
 #      LUT1                        : 17
-#      LUT2                        : 41
-#      LUT3                        : 14
-#      LUT4                        : 18
-#      LUT5                        : 40
-#      LUT6                        : 68
-#      MUXCY                       : 31
-#      MUXF7                       : 3
-#      VCC                         : 3
-#      XORCY                       : 34
-# FlipFlops/Latches                : 33
-#      FD                          : 18
-#      FDR                         : 8
+#      LUT2                        : 37
+#      LUT3                        : 31
+#      LUT4                        : 11
+#      LUT5                        : 48
+#      LUT6                        : 116
+#      MUXCY                       : 45
+#      MUXF7                       : 7
+#      VCC                         : 6
+#      XORCY                       : 50
+# FlipFlops/Latches                : 45
+#      FDR                         : 38
 #      FDRE                        : 3
 #      FDS                         : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 77
-#      IBUF                        : 27
+# IO Buffers                       : 78
+#      IBUF                        : 28
 #      OBUF                        : 44
 #      OBUFT                       : 6
+# DSPs                             : 2
+#      DSP48A1                     : 2
 
 Device utilization summary:
 ---------------------------
@@ -642,23 +951,24 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              33  out of  11440     0%  
- Number of Slice LUTs:                  200  out of   5720     3%  
-    Number used as Logic:               200  out of   5720     3%  
+ Number of Slice Registers:              45  out of  11440     0%  
+ Number of Slice LUTs:                  262  out of   5720     4%  
+    Number used as Logic:               262  out of   5720     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    205
-   Number with an unused Flip Flop:     172  out of    205    83%  
-   Number with an unused LUT:             5  out of    205     2%  
-   Number of fully used LUT-FF pairs:    28  out of    205    13%  
-   Number of unique control sets:         8
+ Number of LUT Flip Flop pairs used:    280
+   Number with an unused Flip Flop:     235  out of    280    83%  
+   Number with an unused LUT:            18  out of    280     6%  
+   Number of fully used LUT-FF pairs:    27  out of    280     9%  
+   Number of unique control sets:         9
 
 IO Utilization: 
  Number of IOs:                          87
- Number of bonded IOBs:                  78  out of    102    76%  
+ Number of bonded IOBs:                  79  out of    102    77%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                      2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -681,7 +991,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 33    |
+clk                                | BUFGP                  | 45    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -692,10 +1002,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 3.799ns (Maximum Frequency: 263.227MHz)
-   Minimum input arrival time before clock: 3.691ns
-   Maximum output required time after clock: 10.576ns
-   Maximum combinational path delay: 11.409ns
+   Minimum period: 12.438ns (Maximum Frequency: 80.399MHz)
+   Minimum input arrival time before clock: 3.883ns
+   Maximum output required time after clock: 9.360ns
+   Maximum combinational path delay: 13.283ns
 
 Timing Details:
 ---------------
@@ -703,32 +1013,43 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.799ns (frequency: 263.227MHz)
-  Total number of paths / destination ports: 591 / 40
+  Clock period: 12.438ns (frequency: 80.399MHz)
+  Total number of paths / destination ports: 44294 / 82
 -------------------------------------------------------------------------
-Delay:               3.799ns (Levels of Logic = 2)
-  Source:            seg/ctr/M_ctr_q_7 (FF)
-  Destination:       seg/ctr/M_ctr_q_15 (FF)
+Delay:               12.438ns (Levels of Logic = 11)
+  Source:            seg/ctr/M_ctr_q_0_1 (FF)
+  Destination:       test_multiplier/M_state_q_FSM_FFd2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: seg/ctr/M_ctr_q_7 to seg/ctr/M_ctr_q_15
+  Data Path: seg/ctr/M_ctr_q_0_1 to test_multiplier/M_state_q_FSM_FFd2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.525   1.181  M_ctr_q_7 (M_ctr_q_7)
-     LUT6:I0->O           18   0.254   1.511  GND_13_o_GND_13_o_equal_2_o_02 (GND_13_o_GND_13_o_equal_2_o_02)
-     LUT5:I1->O            1   0.254   0.000  M_ctr_q_15_rstpot (M_ctr_q_15_rstpot)
-     FD:D                      0.074          M_ctr_q_15
+     FDR:C->Q              6   0.525   1.306  M_ctr_q_0_1 (M_ctr_q_0_1)
+     end scope: 'seg/ctr:M_ctr_q_0_1'
+     end scope: 'seg:M_ctr_q_0_1'
+     begin scope: 'test_multiplier:M_ctr_q_0_1'
+     LUT6:I1->O            3   0.254   0.765  M_mul_a<2>1 (M_mul_a<4>)
+     begin scope: 'test_multiplier/mul:a<4>'
+     DSP48A1:B2->M7        4   3.894   1.259  Mmult_n0010 (n0010<7>)
+     end scope: 'test_multiplier/mul:n0010<7>'
+     LUT6:I0->O            1   0.254   0.682  M_state_q_FSM_FFd2-In25 (M_state_q_FSM_FFd2-In25)
+     LUT3:I2->O            1   0.254   0.790  M_state_q_FSM_FFd2-In26 (M_state_q_FSM_FFd2-In26)
+     LUT6:I4->O            3   0.250   0.766  M_state_q_FSM_FFd2-In27 (M_state_q_FSM_FFd2-In27)
+     LUT6:I5->O            1   0.254   0.000  M_state_q_FSM_FFd2-In210_G (N21)
+     MUXF7:I1->O           1   0.175   0.682  M_state_q_FSM_FFd2-In210 (M_state_q_FSM_FFd2-In2)
+     LUT6:I5->O            2   0.254   0.000  M_state_q_FSM_FFd2-In (M_state_q_FSM_FFd2-In)
+     FDR:D                     0.074          M_state_q_FSM_FFd2
     ----------------------------------------
-    Total                      3.799ns (1.107ns logic, 2.692ns route)
-                                       (29.1% logic, 70.9% route)
+    Total                     12.438ns (6.188ns logic, 6.250ns route)
+                                       (49.8% logic, 50.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 23 / 12
+  Total number of paths / destination ports: 29 / 11
 -------------------------------------------------------------------------
-Offset:              3.691ns (Levels of Logic = 2)
+Offset:              3.883ns (Levels of Logic = 2)
   Source:            io_button<3> (PAD)
   Destination:       M_state_q_0 (FF)
   Destination Clock: clk rising
@@ -737,62 +1058,63 @@ Offset:              3.691ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   1.328   1.042  io_button_3_IBUF (M_state_q[2]_GND_1_o_mux_29_OUT<2>1)
-     LUT4:I0->O            3   0.254   0.765  _n0088_inv11 (_n0088_inv1)
+     IBUF:I->O             4   1.328   1.234  io_button_3_IBUF (io_button_3_IBUF)
+     LUT5:I0->O            3   0.254   0.765  _n0101_inv11 (_n0101_inv1)
      FDRE:CE                   0.302          M_state_q_0
     ----------------------------------------
-    Total                      3.691ns (1.884ns logic, 1.807ns route)
-                                       (51.0% logic, 49.0% route)
+    Total                      3.883ns (1.884ns logic, 1.999ns route)
+                                       (48.5% logic, 51.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 1016 / 11
+  Total number of paths / destination ports: 371 / 11
 -------------------------------------------------------------------------
-Offset:              10.576ns (Levels of Logic = 7)
-  Source:            test_compare/M_state_q_FSM_FFd2 (FF)
-  Destination:       io_seg<5> (PAD)
+Offset:              9.360ns (Levels of Logic = 7)
+  Source:            test_adder/M_state_q_FSM_FFd2 (FF)
+  Destination:       io_seg<1> (PAD)
   Source Clock:      clk rising
 
-  Data Path: test_compare/M_state_q_FSM_FFd2 to io_seg<5>
+  Data Path: test_adder/M_state_q_FSM_FFd2 to io_seg<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              6   0.525   0.984  M_state_q_FSM_FFd2 (M_state_q_FSM_FFd2)
-     LUT2:I0->O            4   0.250   1.234  M_state_q_status<0>1 (status<0>)
-     end scope: 'test_compare:status<0>'
-     LUT6:I1->O            1   0.254   0.790  Sh432_SW0 (N0)
-     LUT6:I4->O            2   0.250   1.002  Sh432 (Sh432)
-     LUT4:I0->O            7   0.254   1.186  Sh435 (Sh43)
-     LUT4:I0->O            1   0.254   0.681  io_seg<2>1 (io_seg_2_OBUF)
-     OBUF:I->O                 2.912          io_seg_2_OBUF (io_seg<2>)
+     FDR:C->Q             26   0.525   1.528  M_state_q_FSM_FFd2 (M_state_q_FSM_FFd2)
+     LUT2:I0->O            1   0.250   0.910  M_state_q_status<1>1 (status<1>)
+     end scope: 'test_adder:status<1>'
+     LUT6:I3->O            7   0.235   0.910  io_seg<0>31 (io_seg<0>_bdd3)
+     LUT3:I2->O            2   0.254   0.726  io_seg<0>2 (io_seg<0>_bdd0)
+     LUT5:I4->O            1   0.254   0.000  io_seg<1>13_G (N41)
+     MUXF7:I1->O           1   0.175   0.681  io_seg<1>13 (io_seg_1_OBUF)
+     OBUF:I->O                 2.912          io_seg_1_OBUF (io_seg<1>)
     ----------------------------------------
-    Total                     10.576ns (4.699ns logic, 5.877ns route)
-                                       (44.4% logic, 55.6% route)
+    Total                      9.360ns (4.605ns logic, 4.755ns route)
+                                       (49.2% logic, 50.8% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 579 / 8
+  Total number of paths / destination ports: 817 / 8
 -------------------------------------------------------------------------
-Delay:               11.409ns (Levels of Logic = 8)
-  Source:            io_dip<17> (PAD)
-  Destination:       io_led<0> (PAD)
+Delay:               13.283ns (Levels of Logic = 8)
+  Source:            io_dip<3> (PAD)
+  Destination:       io_led<2> (PAD)
 
-  Data Path: io_dip<17> to io_led<0>
+  Data Path: io_dip<3> to io_led<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            32   1.328   1.796  io_dip_17_IBUF (io_dip_17_IBUF)
-     begin scope: 'alu:alufn<1>'
-     LUT5:I1->O            1   0.254   0.682  out<0>9_SW0 (N2)
-     LUT5:I4->O            1   0.254   0.958  out<0>9_SW1 (N10)
-     LUT6:I2->O            1   0.254   0.910  out<0>9 (out<0>8)
-     LUT6:I3->O            1   0.235   0.910  out<0>10 (out<0>9)
-     LUT6:I3->O            1   0.235   0.681  out<0>25 (io_led_0_OBUF)
-     end scope: 'alu:out<0>'
-     OBUF:I->O                 2.912          io_led_0_OBUF (io_led<0>)
+     IBUF:I->O            14   1.328   1.126  io_dip_3_IBUF (io_dip_3_IBUF)
+     begin scope: 'alu:a<3>'
+     begin scope: 'alu/multiplier:a<3>'
+     DSP48A1:B3->M2        1   3.894   0.790  Mmult_n0010 (n0010<2>)
+     end scope: 'alu/multiplier:n0010<2>'
+     LUT3:I1->O            1   0.250   0.682  out<2>6 (out<2>5)
+     LUT5:I4->O            1   0.254   1.112  out<2>7 (out<2>6)
+     LUT5:I0->O            1   0.254   0.681  out<2>8 (io_led_2_OBUF)
+     end scope: 'alu:out<2>'
+     OBUF:I->O                 2.912          io_led_2_OBUF (io_led<2>)
     ----------------------------------------
-    Total                     11.409ns (5.472ns logic, 5.937ns route)
-                                       (48.0% logic, 52.0% route)
+    Total                     13.283ns (8.892ns logic, 4.391ns route)
+                                       (66.9% logic, 33.1% route)
 
 =========================================================================
 
@@ -804,20 +1126,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.799|         |         |         |
+clk            |   12.438|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.25 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.02 secs
  
 --> 
 
-Total memory usage is 262804 kilobytes
+Total memory usage is 264860 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    9 (   0 filtered)
-Number of infos    :   10 (   0 filtered)
+Number of infos    :   25 (   0 filtered)
 

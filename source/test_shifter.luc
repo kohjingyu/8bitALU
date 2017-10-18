@@ -6,7 +6,7 @@ module test_shifter (
     
   ) {
   
-  dff test_counter[3](.clk(clk), .rst(rst));
+  dff test_counter[4](.clk(clk), .rst(rst));
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -35,23 +35,82 @@ module test_shifter (
         }
       state.TEST:
         case(test_counter.q) {
-          3b000:
-            shifter.alufn = Inst.ADD;
-            shifter.a = 8h1;
-            shifter.b = 8h1;
+          4b0000:
+            shifter.alufn = Inst.SHL;
+            shifter.a = 8hFF;
+            shifter.b = 8h7;
             
-            if(shifter.out != 8h2) {
+            if(shifter.out != 8h80) {
               state.d = state.FAIL;
-            }             
-          3b001:
-            shifter.alufn = Inst.ADD;
-            shifter.a = 8h1;
-            shifter.b = 8h2;
+            }
+          4b0001:
+            shifter.alufn = Inst.SHL;
+            shifter.a = 8h0;
+            shifter.b = 8h7;
+            
+            if(shifter.out != 8h0) {
+              state.d = state.FAIL;
+            }
+          4b0010:
+            shifter.alufn = Inst.SHL;
+            shifter.a = 8h35;
+            shifter.b = 8h4;
+            
+            if(shifter.out != 8h50) {
+              state.d = state.FAIL;
+            }    
+                     
+          4b0011:
+            shifter.alufn = Inst.SHR;
+            shifter.a = 8hFF;
+            shifter.b = 8h7;
+            
+            if(shifter.out != 8h1) {
+              state.d = state.FAIL;
+            }
+          4b0100:
+            shifter.alufn = Inst.SHR;
+            shifter.a = 8h0;
+            shifter.b = 8h7;
+            
+            if(shifter.out != 8h0) {
+              state.d = state.FAIL;
+            }
+          4b0101:
+            shifter.alufn = Inst.SHR;
+            shifter.a = 8h35;
+            shifter.b = 8h4;
             
             if(shifter.out != 8h3) {
               state.d = state.FAIL;
-            }             
-          3b111:
+            }
+            
+          4b0110:
+            shifter.alufn = Inst.SRA;
+            shifter.a = 8hFF;
+            shifter.b = 8h7;
+            
+            if(shifter.out != 8hFF) {
+              state.d = state.FAIL;
+            }
+          4b0111:
+            shifter.alufn = Inst.SRA;
+            shifter.a = 8h0;
+            shifter.b = 8h7;
+            
+            if(shifter.out != 8h00) {
+              state.d = state.FAIL;
+            }
+          4b1000:
+            shifter.alufn = Inst.SRA;
+            shifter.a = 8h35;
+            shifter.b = 8h4;
+            
+            if(shifter.out != 8h03) {
+              state.d = state.FAIL;
+            }
+                                  
+          4b1111:
              state.d = state.PASS;            
         }
       state.PASS:

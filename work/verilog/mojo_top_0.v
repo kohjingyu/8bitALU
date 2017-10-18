@@ -91,9 +91,20 @@ module mojo_top_0 (
     .status(M_test_shifter_status)
   );
   
+  wire [2-1:0] M_test_multiplier_status;
+  reg [1-1:0] M_test_multiplier_clk;
+  reg [1-1:0] M_test_multiplier_rst;
+  reg [1-1:0] M_test_multiplier_start;
+  test_multiplier_6 test_multiplier (
+    .clk(M_test_multiplier_clk),
+    .rst(M_test_multiplier_rst),
+    .start(M_test_multiplier_start),
+    .status(M_test_multiplier_status)
+  );
+  
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_6 reset_cond (
+  reset_conditioner_7 reset_cond (
     .clk(clk),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
@@ -109,7 +120,7 @@ module mojo_top_0 (
   wire [7-1:0] M_seg_seg;
   wire [4-1:0] M_seg_sel;
   reg [16-1:0] M_seg_values;
-  multi_seven_seg_7 seg (
+  multi_seven_seg_8 seg (
     .clk(clk),
     .rst(rst),
     .values(M_seg_values),
@@ -131,6 +142,8 @@ module mojo_top_0 (
     M_test_bool_rst = rst;
     M_test_shifter_clk = clk;
     M_test_shifter_rst = rst;
+    M_test_multiplier_clk = clk;
+    M_test_multiplier_rst = rst;
     led = 8'h00;
     spi_miso = 1'bz;
     spi_channel = 4'bzzzz;
@@ -151,6 +164,7 @@ module mojo_top_0 (
     M_test_compare_start = 1'h0;
     M_test_bool_start = 1'h0;
     M_test_shifter_start = 1'h0;
+    M_test_multiplier_start = 1'h0;
     
     case (M_state_q)
       IDLE_state: begin
@@ -192,7 +206,17 @@ module mojo_top_0 (
           M_seg_values = 16'hab55;
         end else begin
           if (M_test_shifter_status == 2'h2) begin
-            M_seg_values = 16'h5ddf;
+            M_seg_values = 16'h5c1d;
+          end
+        end
+      end
+      MULTIPLY_state: begin
+        M_test_multiplier_start = 1'h1;
+        if (M_test_multiplier_status == 1'h1) begin
+          M_seg_values = 16'hab55;
+        end else begin
+          if (M_test_multiplier_status == 2'h2) begin
+            M_seg_values = 16'h234d;
           end
         end
       end
@@ -212,6 +236,10 @@ module mojo_top_0 (
     if (io_button[3+0-:1]) begin
       M_test_counter_d = 1'h0;
       M_state_d = SHIFTER_state;
+    end
+    if (io_button[4+0-:1]) begin
+      M_test_counter_d = 1'h0;
+      M_state_d = MULTIPLY_state;
     end
     M_test_counter_d = M_test_counter_q + 1'h1;
     io_led[0+7-:8] = M_alu_out;

@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module test_adder_2 (
+module test_multiplier_6 (
     input clk,
     input rst,
     input start,
@@ -22,15 +22,15 @@ module test_adder_2 (
   
   reg [1:0] M_state_d, M_state_q = IDLE_state;
   
-  wire [8-1:0] M_adder_out;
-  reg [8-1:0] M_adder_a;
-  reg [8-1:0] M_adder_b;
-  reg [6-1:0] M_adder_alufn;
-  adder_9 adder (
-    .a(M_adder_a),
-    .b(M_adder_b),
-    .alufn(M_adder_alufn),
-    .out(M_adder_out)
+  wire [8-1:0] M_mul_out;
+  reg [8-1:0] M_mul_a;
+  reg [8-1:0] M_mul_b;
+  reg [6-1:0] M_mul_alufn;
+  multiplier_13 mul (
+    .a(M_mul_a),
+    .b(M_mul_b),
+    .alufn(M_mul_alufn),
+    .out(M_mul_out)
   );
   
   always @* begin
@@ -38,9 +38,9 @@ module test_adder_2 (
     M_test_counter_d = M_test_counter_q;
     
     status = 1'h0;
-    M_adder_a = 1'h0;
-    M_adder_b = 1'h0;
-    M_adder_alufn = 6'h00;
+    M_mul_a = 1'h0;
+    M_mul_b = 1'h0;
+    M_mul_alufn = 6'h00;
     if (start == 1'h0) begin
       M_state_d = IDLE_state;
     end
@@ -56,106 +56,82 @@ module test_adder_2 (
         
         case (M_test_counter_q)
           4'h0: begin
-            M_adder_alufn = 6'h00;
-            M_adder_a = 8'hff;
-            M_adder_b = 8'hff;
-            if (M_adder_out != 8'hfe) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'h00;
+            M_mul_b = 8'h00;
+            if (M_mul_out != 8'h00) begin
               M_state_d = FAIL_state;
             end
           end
           4'h1: begin
-            M_adder_alufn = 6'h00;
-            M_adder_a = 8'h01;
-            M_adder_b = 8'h01;
-            if (M_adder_out != 8'h02) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'h01;
+            M_mul_b = 8'h01;
+            if (M_mul_out != 8'h01) begin
               M_state_d = FAIL_state;
             end
           end
           4'h2: begin
-            M_adder_alufn = 6'h00;
-            M_adder_a = 8'h80;
-            M_adder_b = 8'h80;
-            if (M_adder_out != 8'h00) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'hff;
+            M_mul_b = 8'hff;
+            if (M_mul_out != 8'h01) begin
               M_state_d = FAIL_state;
             end
           end
           4'h3: begin
-            M_adder_alufn = 6'h00;
-            M_adder_a = 8'h7f;
-            M_adder_b = 8'h7f;
-            if (M_adder_out != 8'hfe) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'h01;
+            M_mul_b = 8'h35;
+            if (M_mul_out != 8'h35) begin
               M_state_d = FAIL_state;
             end
           end
           4'h4: begin
-            M_adder_alufn = 6'h00;
-            M_adder_a = 8'h7f;
-            M_adder_b = 8'h8f;
-            if (M_adder_out != 8'h0e) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'h35;
+            M_mul_b = 8'h53;
+            if (M_mul_out != 8'h2f) begin
               M_state_d = FAIL_state;
             end
           end
           4'h5: begin
-            M_adder_alufn = 6'h00;
-            M_adder_a = 8'h00;
-            M_adder_b = 8'h00;
-            if (M_adder_out != 8'h00) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'h03;
+            M_mul_a = 8'h03;
+            if (M_mul_out != 8'h09) begin
               M_state_d = FAIL_state;
             end
           end
           4'h6: begin
-            M_adder_alufn = 6'h01;
-            M_adder_a = 8'hff;
-            M_adder_b = 8'hff;
-            if (M_adder_out != 8'h00) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'hc0;
+            M_mul_a = 8'hc0;
+            if (M_mul_out != 8'h00) begin
               M_state_d = FAIL_state;
             end
           end
           4'h7: begin
-            M_adder_alufn = 6'h01;
-            M_adder_a = 8'h01;
-            M_adder_b = 8'h01;
-            if (M_adder_out != 8'h00) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'hfd;
+            M_mul_b = 8'hfc;
+            if (M_mul_out != 8'h0c) begin
               M_state_d = FAIL_state;
             end
           end
           4'h8: begin
-            M_adder_alufn = 6'h01;
-            M_adder_a = 8'h80;
-            M_adder_b = 8'h01;
-            if (M_adder_out != 8'h7f) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'h02;
+            M_mul_b = 8'hfc;
+            if (M_mul_out != 8'hf8) begin
               M_state_d = FAIL_state;
             end
           end
           4'h9: begin
-            M_adder_alufn = 6'h01;
-            M_adder_a = 8'h7f;
-            M_adder_b = 8'h81;
-            if (M_adder_out != 8'hfe) begin
-              M_state_d = FAIL_state;
-            end
-          end
-          4'ha: begin
-            M_adder_alufn = 6'h01;
-            M_adder_a = 8'hff;
-            M_adder_b = 8'h01;
-            if (M_adder_out != 8'hfe) begin
-              M_state_d = FAIL_state;
-            end
-          end
-          4'hb: begin
-            M_adder_alufn = 6'h01;
-            M_adder_a = 8'h01;
-            M_adder_b = 8'hff;
-            if (M_adder_out != 8'h02) begin
-              M_state_d = FAIL_state;
-            end
-          end
-          4'hc: begin
-            M_adder_alufn = 6'h01;
-            M_adder_a = 8'h00;
-            M_adder_b = 8'h00;
-            if (M_adder_out != 8'h00) begin
+            M_mul_alufn = 6'h02;
+            M_mul_a = 8'h80;
+            M_mul_b = 8'h40;
+            if (M_mul_out != 8'h00) begin
               M_state_d = FAIL_state;
             end
           end

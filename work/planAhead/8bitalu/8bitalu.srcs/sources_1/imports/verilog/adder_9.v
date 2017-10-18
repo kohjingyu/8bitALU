@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module boolean_9 (
+module adder_9 (
     input [7:0] a,
     input [7:0] b,
     input [5:0] alufn,
@@ -17,17 +17,11 @@ module boolean_9 (
     out = 1'h0;
     
     case (alufn)
-      6'h18: begin
-        out = a & b;
+      6'h00: begin
+        out = a + b;
       end
-      6'h1e: begin
-        out = a | b;
-      end
-      6'h16: begin
-        out = a ^ b;
-      end
-      6'h1a: begin
-        out = a;
+      6'h01: begin
+        out = a - b;
       end
     endcase
   end

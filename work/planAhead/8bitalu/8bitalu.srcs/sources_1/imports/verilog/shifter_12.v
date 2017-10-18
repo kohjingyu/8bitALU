@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module compare_10 (
+module shifter_12 (
     input [7:0] a,
     input [7:0] b,
     input [5:0] alufn,
@@ -17,14 +17,15 @@ module compare_10 (
     out = 1'h0;
     
     case (alufn)
-      6'h33: begin
-        out[0+0-:1] = a == b;
+      6'h20: begin
+        out = a << b[0+2-:3];
       end
-      6'h35: begin
-        out[0+0-:1] = a < b;
+      6'h21: begin
+        out = a >> b[0+2-:3];
       end
-      6'h37: begin
-        out[0+0-:1] = a <= b;
+      6'h23: begin
+        out = a >> b[0+2-:3];
+        out[7+0-:1] = a[7+0-:1];
       end
     endcase
   end

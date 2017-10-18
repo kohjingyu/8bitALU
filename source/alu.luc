@@ -9,6 +9,7 @@ module alu (
   boolean boolean;
   compare compare;
   shifter shifter;
+  multiplier multiplier;
 
   always {
     out = 0;
@@ -29,6 +30,10 @@ module alu (
     shifter.a = a;
     shifter.b = b;
     shifter.alufn = alufn;
+    
+    multiplier.a = a;
+    multiplier.b = b;
+    multiplier.alufn = alufn;
   
     // Determine which submodule to use
     case (alufn) {
@@ -37,7 +42,10 @@ module alu (
         out = adder.out;        
       Inst.SUB:
         // Adder - Subtract
-        out = adder.out;        
+        out = adder.out; 
+      Inst.MUL:
+        // Multiplier  
+        out = multiplier.out;       
       Inst.AND:
         // Boolean - AND
         out = boolean.out;        

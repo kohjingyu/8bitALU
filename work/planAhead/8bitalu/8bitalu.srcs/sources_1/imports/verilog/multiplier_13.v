@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module adder_8 (
+module multiplier_13 (
     input [7:0] a,
     input [7:0] b,
     input [5:0] alufn,
@@ -17,11 +17,11 @@ module adder_8 (
     out = 1'h0;
     
     case (alufn)
-      6'h00: begin
-        out = a + b;
+      6'h02: begin
+        out = a * b;
       end
-      6'h01: begin
-        out = a - b;
+      6'h03: begin
+        out = a / b;
       end
     endcase
   end

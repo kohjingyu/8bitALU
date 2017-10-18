@@ -13,7 +13,7 @@ module test_shifter_5 (
   
   
   
-  reg [2:0] M_test_counter_d, M_test_counter_q = 1'h0;
+  reg [3:0] M_test_counter_d, M_test_counter_q = 1'h0;
   
   localparam IDLE_state = 2'd0;
   localparam TEST_state = 2'd1;
@@ -26,7 +26,7 @@ module test_shifter_5 (
   reg [8-1:0] M_shifter_a;
   reg [8-1:0] M_shifter_b;
   reg [6-1:0] M_shifter_alufn;
-  shifter_11 shifter (
+  shifter_12 shifter (
     .a(M_shifter_a),
     .b(M_shifter_b),
     .alufn(M_shifter_alufn),
@@ -55,23 +55,79 @@ module test_shifter_5 (
       TEST_state: begin
         
         case (M_test_counter_q)
-          3'h0: begin
-            M_shifter_alufn = 6'h00;
-            M_shifter_a = 8'h01;
-            M_shifter_b = 8'h01;
-            if (M_shifter_out != 8'h02) begin
+          4'h0: begin
+            M_shifter_alufn = 6'h20;
+            M_shifter_a = 8'hff;
+            M_shifter_b = 8'h07;
+            if (M_shifter_out != 8'h80) begin
               M_state_d = FAIL_state;
             end
           end
-          3'h1: begin
-            M_shifter_alufn = 6'h00;
-            M_shifter_a = 8'h01;
-            M_shifter_b = 8'h02;
+          4'h1: begin
+            M_shifter_alufn = 6'h20;
+            M_shifter_a = 8'h00;
+            M_shifter_b = 8'h07;
+            if (M_shifter_out != 8'h00) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h2: begin
+            M_shifter_alufn = 6'h20;
+            M_shifter_a = 8'h35;
+            M_shifter_b = 8'h04;
+            if (M_shifter_out != 8'h50) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h3: begin
+            M_shifter_alufn = 6'h21;
+            M_shifter_a = 8'hff;
+            M_shifter_b = 8'h07;
+            if (M_shifter_out != 8'h01) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h4: begin
+            M_shifter_alufn = 6'h21;
+            M_shifter_a = 8'h00;
+            M_shifter_b = 8'h07;
+            if (M_shifter_out != 8'h00) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h5: begin
+            M_shifter_alufn = 6'h21;
+            M_shifter_a = 8'h35;
+            M_shifter_b = 8'h04;
             if (M_shifter_out != 8'h03) begin
               M_state_d = FAIL_state;
             end
           end
-          3'h7: begin
+          4'h6: begin
+            M_shifter_alufn = 6'h23;
+            M_shifter_a = 8'hff;
+            M_shifter_b = 8'h07;
+            if (M_shifter_out != 8'hff) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h7: begin
+            M_shifter_alufn = 6'h23;
+            M_shifter_a = 8'h00;
+            M_shifter_b = 8'h07;
+            if (M_shifter_out != 8'h00) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h8: begin
+            M_shifter_alufn = 6'h23;
+            M_shifter_a = 8'h35;
+            M_shifter_b = 8'h04;
+            if (M_shifter_out != 8'h03) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'hf: begin
             M_state_d = PASS_state;
           end
         endcase

@@ -6,7 +6,7 @@ module test_compare (
     
   ) {
   
-  dff test_counter[3](.clk(clk), .rst(rst));
+  dff test_counter[4](.clk(clk), .rst(rst));
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -35,23 +35,107 @@ module test_compare (
         }
       state.TEST:
         case(test_counter.q) {
-          3b000:
-            compare.alufn = Inst.ADD;
-            compare.a = 8h1;
-            compare.b = 8h1;
+          //compare FF and FF
+          4h0:
+            compare.alufn = Inst.CMPEQ;
+            compare.a = 8hFF;
+            compare.b = 8hFF;
             
-            if(compare.out != 8h2) {
+            if(compare.out != 1) {
+              state.d = state.FAIL;
+            }
+          4h1:
+            compare.alufn = Inst.CMPLT;
+            compare.a = 8hFF;
+            compare.b = 8hFF;
+            
+            if(compare.out != 0) {
+              state.d = state.FAIL;
+            }  
+          4h2:
+            compare.alufn = Inst.CMPLE;
+            compare.a = 8hFF;
+            compare.b = 8hFF;
+            
+            if(compare.out != 1) {
+              state.d = state.FAIL;
+            }  
+          //compare 00 and 00  
+          4h3:
+            compare.alufn = Inst.CMPEQ;
+            compare.a = 8h00;
+            compare.b = 8h00;
+            
+            if(compare.out != 1) {
+              state.d = state.FAIL;
+            }                                      
+          4h4:
+            compare.alufn = Inst.CMPLT;
+            compare.a = 8h00;
+            compare.b = 8h00;
+            
+            if(compare.out != 0) {
+              state.d = state.FAIL;
+            }            
+          4h5:
+            compare.alufn = Inst.CMPLE;
+            compare.a = 8h00;
+            compare.b = 8h00;
+            
+            if(compare.out != 1) {
+              state.d = state.FAIL;
+            }   
+          // a > b         
+          4h6:
+            compare.alufn = Inst.CMPEQ;
+            compare.a = 8h53;
+            compare.b = 8h35;
+            
+            if(compare.out != 0) {
+              state.d = state.FAIL;
+            }            
+          4h7:
+            compare.alufn = Inst.CMPLT;
+            compare.a = 8h53;
+            compare.b = 8h35;
+            
+            if(compare.out != 0) {
               state.d = state.FAIL;
             }             
-          3b001:
-            compare.alufn = Inst.ADD;
-            compare.a = 8h1;
-            compare.b = 8h2;
+          4h8:
+            compare.alufn = Inst.CMPLE;
+            compare.a = 8h53;
+            compare.b = 8h35;
             
-            if(compare.out != 8h3) {
+            if(compare.out != 0) {
               state.d = state.FAIL;
-            }             
-          3b111:
+            } 
+          // a < b
+          4h9:
+            compare.alufn = Inst.CMPEQ;
+            compare.a = 8h36;
+            compare.b = 8h54;
+            
+            if(compare.out != 0) {
+              state.d = state.FAIL;
+            }  
+          4hA:
+            compare.alufn = Inst.CMPLT;
+            compare.a = 8h36;
+            compare.b = 8h54;
+            
+            if(compare.out != 1) {
+              state.d = state.FAIL;
+            } 
+          4hB:
+            compare.alufn = Inst.CMPLE;
+            compare.a = 8h36;
+            compare.b = 8h54;
+            
+            if(compare.out != 1) {
+              state.d = state.FAIL;
+            }                                                                          
+          4hF:
              state.d = state.PASS;            
         }
       state.PASS:

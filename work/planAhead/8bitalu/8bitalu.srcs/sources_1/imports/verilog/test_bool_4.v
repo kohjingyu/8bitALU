@@ -13,7 +13,7 @@ module test_bool_4 (
   
   
   
-  reg [2:0] M_test_counter_d, M_test_counter_q = 1'h0;
+  reg [3:0] M_test_counter_d, M_test_counter_q = 1'h0;
   
   localparam IDLE_state = 2'd0;
   localparam TEST_state = 2'd1;
@@ -26,7 +26,7 @@ module test_bool_4 (
   reg [8-1:0] M_bool_a;
   reg [8-1:0] M_bool_b;
   reg [6-1:0] M_bool_alufn;
-  boolean_9 bool (
+  boolean_10 bool (
     .a(M_bool_a),
     .b(M_bool_b),
     .alufn(M_bool_alufn),
@@ -55,23 +55,68 @@ module test_bool_4 (
       TEST_state: begin
         
         case (M_test_counter_q)
-          3'h0: begin
-            M_bool_alufn = 6'h00;
-            M_bool_a = 8'h01;
-            M_bool_b = 8'h01;
-            if (M_bool_out != 8'h02) begin
+          4'h0: begin
+            M_bool_alufn = 6'h18;
+            M_bool_a = 8'h35;
+            M_bool_b = 8'h53;
+            if (M_bool_out != 8'h11) begin
               M_state_d = FAIL_state;
             end
           end
-          3'h1: begin
-            M_bool_alufn = 6'h00;
-            M_bool_a = 8'h01;
-            M_bool_b = 8'h02;
-            if (M_bool_out != 8'h03) begin
+          4'h1: begin
+            M_bool_alufn = 6'h1e;
+            M_bool_a = 8'h35;
+            M_bool_b = 8'h53;
+            if (M_bool_out != 8'h77) begin
               M_state_d = FAIL_state;
             end
           end
-          3'h7: begin
+          4'h2: begin
+            M_bool_alufn = 6'h1e;
+            M_bool_a = 8'h00;
+            M_bool_b = 8'h00;
+            if (M_bool_out != 8'h00) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h3: begin
+            M_bool_alufn = 6'h1e;
+            M_bool_a = 8'hff;
+            M_bool_b = 8'hff;
+            if (M_bool_out != 8'hff) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h4: begin
+            M_bool_alufn = 6'h16;
+            M_bool_a = 8'h35;
+            M_bool_b = 8'h53;
+            if (M_bool_out != 8'h66) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h5: begin
+            M_bool_alufn = 6'h1a;
+            M_bool_a = 8'h35;
+            if (M_bool_out != 8'h35) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h6: begin
+            M_bool_alufn = 6'h1a;
+            M_bool_a = 8'h00;
+            if (M_bool_out != 8'h00) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'h7: begin
+            M_bool_alufn = 6'h1a;
+            M_bool_a = 8'hff;
+            if (M_bool_out != 8'hff) begin
+              M_state_d = FAIL_state;
+            end
+          end
+          4'hf: begin
             M_state_d = PASS_state;
           end
         endcase
@@ -88,18 +133,18 @@ module test_bool_4 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_test_counter_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_test_counter_q <= M_test_counter_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_test_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_test_counter_q <= M_test_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   

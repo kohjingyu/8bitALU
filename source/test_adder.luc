@@ -6,7 +6,7 @@ module test_adder (
     
   ) {
   
-  dff test_counter[3](.clk(clk), .rst(rst));
+  dff test_counter[4](.clk(clk), .rst(rst));
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -35,23 +35,125 @@ module test_adder (
         }
       state.TEST:
         case(test_counter.q) {
-          3b000:
+          4h0:
+          //Negative + Negative, No Overflow
             adder.alufn = Inst.ADD;
-            adder.a = 8h1;
-            adder.b = 8h1;
+            adder.a = 8hFF;
+            adder.b = 8hFF;
+            
+            if(adder.out != 8hFE) {
+              state.d = state.FAIL;
+            }             
+          4h1:
+          //Positive + Positive, No Overflow
+            adder.alufn = Inst.ADD;
+            adder.a = 8h01;
+            adder.b = 8h01;
             
             if(adder.out != 8h2) {
               state.d = state.FAIL;
             }             
-          3b001:
+          4h2:
+          //Negative + Negative, Overflow
             adder.alufn = Inst.ADD;
-            adder.a = 8h1;
-            adder.b = 8h2;
+            adder.a = 8h80;
+            adder.b = 8h80;
             
-            if(adder.out != 8h3) {
+            if(adder.out != 8h00) {
+              state.d = state.FAIL;
+            }
+          4h3:
+          //Positive + Positive, Overflow
+            adder.alufn = Inst.ADD;
+            adder.a = 8h7F;
+            adder.b = 8h7F;
+            
+            if(adder.out != 8hFE) {
+              state.d = state.FAIL;
+            }
+          4h4:
+          //Positive + Negative (Never overflow)
+            adder.alufn = Inst.ADD;            
+            adder.a = 8h7F;
+            adder.b = 8h8F;
+            
+            if(adder.out != 8h0E) {
+              state.d = state.FAIL;
+            }            
+          4h5:
+          //Zero + Zero
+            adder.alufn = Inst.ADD;            
+            adder.a = 8h00;
+            adder.b = 8h00;
+            
+            if(adder.out != 8h00) {
+              state.d = state.FAIL;
+            }
+          4h6:
+          //Negative - Negative, Never Overflow
+            adder.alufn = Inst.SUB;
+            adder.a = 8hFF;
+            adder.b = 8hFF;
+            
+            if(adder.out != 8h00) {
               state.d = state.FAIL;
             }             
-          3b111:
+          4h7:
+          //Positive - Positive, Never Overflow
+            adder.alufn = Inst.SUB;
+            adder.a = 8h01;
+            adder.b = 8h01;
+            
+            if(adder.out != 8h00) {
+              state.d = state.FAIL;
+            }             
+          4h8:
+          //Negative - Positive, Overflow
+            adder.alufn = Inst.SUB;
+            adder.a = 8h80;
+            adder.b = 8h01;
+            
+            if(adder.out != 8h7F) {
+              state.d = state.FAIL;
+            }
+          4h9:
+          //Positive - Negative, Overflow
+            adder.alufn = Inst.SUB;
+            adder.a = 8h7F;
+            adder.b = 8h81;
+            
+            if(adder.out != 8hFE) {
+              state.d = state.FAIL;
+            }
+          4hA:
+          //Negative - Positive, No Overflow
+            adder.alufn = Inst.SUB;
+            adder.a = 8hFF;
+            adder.b = 8h01;
+            
+            if(adder.out != 8hFE) {
+              state.d = state.FAIL;
+            }
+          4hB:
+          //Positive - Negative, No Overflow
+            adder.alufn = Inst.SUB;
+            adder.a = 8h01;
+            adder.b = 8hFF;
+            
+            if(adder.out != 8h02) {
+              state.d = state.FAIL;
+            }                         
+          4hC:
+          //Zero - Zero
+            adder.alufn = Inst.SUB;            
+            adder.a = 8h00;
+            adder.b = 8h00;
+            
+            if(adder.out != 8h00) {
+              state.d = state.FAIL;
+            }            
+            
+          4hF:
              state.d = state.PASS;            
         }
       state.PASS:

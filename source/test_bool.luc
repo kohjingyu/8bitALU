@@ -6,7 +6,7 @@ module test_bool (
     
   ) {
   
-  dff test_counter[3](.clk(clk), .rst(rst));
+  dff test_counter[4](.clk(clk), .rst(rst));
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -35,23 +35,69 @@ module test_bool (
         }
       state.TEST:
         case(test_counter.q) {
-          3b000:
-            bool.alufn = Inst.ADD;
-            bool.a = 8h1;
-            bool.b = 8h1;
+          4b0000:
+            bool.alufn = Inst.AND;
+            bool.a = 8h35;
+            bool.b = 8h53;
             
-            if(bool.out != 8h2) {
-              state.d = state.FAIL;
-            }             
-          3b001:
-            bool.alufn = Inst.ADD;
-            bool.a = 8h1;
-            bool.b = 8h2;
+            if (bool.out != 8h11) {
+            state.d = state.FAIL;
+            }
+          4b0001:
+            bool.alufn = Inst.OR;
+            bool.a = 8h35;
+            bool.b = 8h53;
             
-            if(bool.out != 8h3) {
-              state.d = state.FAIL;
-            }             
-          3b111:
+            if (bool.out != 8h77) {
+            state.d = state.FAIL;
+            }
+          4b0010:
+            bool.alufn = Inst.OR;
+            bool.a = 8h0;
+            bool.b = 8h0;
+            
+            if (bool.out != 8h0) {
+            state.d = state.FAIL;
+            }
+          4b0011:
+            bool.alufn = Inst.OR;
+            bool.a = 8hFF;
+            bool.b = 8hFF;
+            
+            if (bool.out != 8hFF) {
+            state.d = state.FAIL;
+            }
+          4b0100:
+            bool.alufn = Inst.XOR;
+            bool.a = 8h35;
+            bool.b = 8h53;
+            
+            if (bool.out != 8h66) {            
+            state.d = state.FAIL;
+            }
+          4b0101:
+            bool.alufn = Inst.LDR;
+            bool.a = 8h35;
+            
+            if (bool.out != 8h35) {
+            state.d = state.FAIL;
+            }   
+          4b0110:
+            bool.alufn = Inst.LDR;
+            bool.a = 8h00;
+            
+            if (bool.out != 8h00) {
+            state.d = state.FAIL;
+            }
+          4b0111:
+            bool.alufn = Inst.LDR;
+            bool.a = 8hFF;
+            
+            if (bool.out != 8hFF) {
+            state.d = state.FAIL;
+            }
+               
+          4b1111:
              state.d = state.PASS;            
         }
       state.PASS:

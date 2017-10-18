@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Oct 17 17:52:52 2017
+Wed Oct 18 16:19:45 2017
 
 drc -z mojo_top_0_routed.ncd mojo_top_0.pcf
 

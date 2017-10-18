@@ -1,0 +1,129 @@
+module test_multiplier (
+    input clk,  // clock
+    input rst,  // reset
+    input start,
+    output status[2] // 0 = not done; 1 = pass; 2 = fail
+    
+  ) {
+  
+  dff test_counter[4](.clk(clk), .rst(rst));  
+  
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    .rst(rst) {
+      fsm state = {IDLE, TEST, PASS, FAIL};  
+    }    
+  }
+  multiplier mul;
+    
+  always {  
+    status = 0;
+    mul.a = 0;
+    mul.b = 0;
+    mul.alufn = 6d0;
+    
+    if(start == 0){ 
+      state.d = state.IDLE;
+    }
+    
+    case(state.q) {
+      state.IDLE:
+        status = 0;
+        if(start == 1) {
+          state.d = state.TEST;
+        }
+      state.TEST:
+        case(test_counter.q) {
+          4b0000: //Zero * Zero
+            mul.alufn = Inst.MUL;
+            mul.a = 8h00;
+            mul.b = 8h00;
+            
+            if (mul.out != 8h00) {
+            state.d = state.FAIL;
+            }
+          4b0001: //1 * 1
+            mul.alufn = Inst.MUL;
+            mul.a = 8h01;
+            mul.b = 8h01;
+            
+            if (mul.out != 8h01) {
+            state.d = state.FAIL;
+            }
+          4b0010: //-1 * -1
+            mul.alufn = Inst.MUL;
+            mul.a = 8hFF;
+            mul.b = 8hFF;
+            
+            if (mul.out != 8h01) {
+            state.d = state.FAIL;
+            }
+          4b0011: // 1 * anything
+            mul.alufn = Inst.MUL;
+            mul.a = 8h01;
+            mul.b = 8h35;
+          
+            if (mul.out != 8h35) {
+            state.d = state.FAIL;
+            }
+          4b0100: // Positive * Positive, overflow
+            mul.alufn = Inst.MUL;
+            mul.a = 8h35;
+            mul.b = 8h53;
+            
+            if (mul.out != 8h2F) {            
+            state.d = state.FAIL;
+            }
+          4b0101: // Positive * Positive, no overflow
+            mul.alufn = Inst.MUL;
+            mul.a = 8h03;
+            mul.a = 8h03;
+            
+            if (mul.out != 8h09) {
+            state.d = state.FAIL;
+            }   
+          4b0110: // Negative * Negative, overflow
+            mul.alufn = Inst.MUL;
+            mul.a = 8hC0;
+            mul.a = 8hC0;
+            
+            if (mul.out != 8h00) {
+            state.d = state.FAIL;
+            }
+          4b0111: // Negative * Negative, no overflow
+            mul.alufn = Inst.MUL;
+            mul.a = 8hFD;
+            mul.b = 8hFC;
+            
+            if (mul.out != 8h0C) {
+            state.d = state.FAIL;
+            }
+          4b1000: // Positive * Negative, no overflow
+            mul.alufn = Inst.MUL;
+            mul.a = 8h02;
+            mul.b = 8hFC;
+            
+            if (mul.out != 8hF8) {
+            state.d = state.FAIL;
+            }
+          4b1001: // Positive * Negative, overflow
+            mul.alufn = Inst.MUL;
+            mul.a = 8h80;
+            mul.b = 8h40;
+            
+            if (mul.out != 8h00) {
+            state.d = state.FAIL;
+            }                   
+          4b1111:
+             state.d = state.PASS;            
+        }
+      state.PASS:
+        status = 1;
+      state.FAIL:
+        status = 2;
+    }
+    
+    test_counter.d = test_counter.q + 1;
+  }
+}

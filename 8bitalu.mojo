@@ -4,15 +4,17 @@
     <src>test_shifter.luc</src>
     <src>alu.luc</src>
     <src>boolean.luc</src>
+    <src>multiplier.luc</src>
+    <src>multi_seven_seg.luc</src>
+    <src>compare.luc</src>
+    <src top="true">mojo_top.luc</src>
+    <src>test_adder.luc</src>
     <src>shifter.luc</src>
     <src>seven_seg.luc</src>
     <src>test_compare.luc</src>
     <src>test_bool.luc</src>
-    <src>multi_seven_seg.luc</src>
     <src>adder.luc</src>
-    <src>compare.luc</src>
-    <src top="true">mojo_top.luc</src>
-    <src>test_adder.luc</src>
+    <src>test_multiplier.luc</src>
     <ucf lib="true">io_shield.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <component>decoder.luc</component>

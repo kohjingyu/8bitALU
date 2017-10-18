@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module shifter_11 (
+module boolean_10 (
     input [7:0] a,
     input [7:0] b,
     input [5:0] alufn,
@@ -17,14 +17,17 @@ module shifter_11 (
     out = 1'h0;
     
     case (alufn)
-      6'h20: begin
-        out = a << b[0+2-:3];
+      6'h18: begin
+        out = a & b;
       end
-      6'h21: begin
-        out = a >> b[0+2-:3];
+      6'h1e: begin
+        out = a | b;
       end
-      6'h23: begin
-        out = a >>> b[0+2-:3];
+      6'h16: begin
+        out = a ^ b;
+      end
+      6'h1a: begin
+        out = a;
       end
     endcase
   end
