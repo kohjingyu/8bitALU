@@ -1,4 +1,4 @@
-module test_adder (
+module test_error (
     input clk,  // clock
     input rst,  // reset
     input start,
@@ -26,19 +26,21 @@ module test_adder (
     if(start == 0){ 
       state.d = state.IDLE;
     }
-    // test cases are tested in this segment
-    // status is used to indicate the test result
+    
     case(state.q) {
       state.IDLE:
         status = 0;
         if(start == 1) {
           state.d = state.TEST;
         }
+        
+      // for error inducing testing, ADD result is replaced by SUB result. 
+        
       state.TEST:
         case(test_counter.q) {
           4h0:
           //Negative + Negative, No Overflow
-            adder.alufn = Inst.ADD;
+            adder.alufn = Inst.SUB;
             adder.a = 8hFF;
             adder.b = 8hFF;
             
@@ -47,7 +49,7 @@ module test_adder (
             }             
           4h1:
           //Positive + Positive, No Overflow
-            adder.alufn = Inst.ADD;
+            adder.alufn = Inst.SUB;
             adder.a = 8h01;
             adder.b = 8h01;
             
@@ -56,7 +58,7 @@ module test_adder (
             }             
           4h2:
           //Negative + Negative, Overflow
-            adder.alufn = Inst.ADD;
+            adder.alufn = Inst.SUB;
             adder.a = 8h80;
             adder.b = 8h80;
             
@@ -65,7 +67,7 @@ module test_adder (
             }
           4h3:
           //Positive + Positive, Overflow
-            adder.alufn = Inst.ADD;
+            adder.alufn = Inst.SUB;
             adder.a = 8h7F;
             adder.b = 8h7F;
             
@@ -74,7 +76,7 @@ module test_adder (
             }
           4h4:
           //Positive + Negative (Never overflow)
-            adder.alufn = Inst.ADD;            
+            adder.alufn = Inst.SUB;            
             adder.a = 8h7F;
             adder.b = 8h8F;
             
@@ -83,7 +85,7 @@ module test_adder (
             }            
           4h5:
           //Zero + Zero
-            adder.alufn = Inst.ADD;            
+            adder.alufn = Inst.SUB;            
             adder.a = 8h00;
             adder.b = 8h00;
             
@@ -92,7 +94,7 @@ module test_adder (
             }
           4h6:
           //Negative - Negative, Never Overflow
-            adder.alufn = Inst.SUB;
+            adder.alufn = Inst.ADD;
             adder.a = 8hFF;
             adder.b = 8hFF;
             
@@ -101,7 +103,7 @@ module test_adder (
             }             
           4h7:
           //Positive - Positive, Never Overflow
-            adder.alufn = Inst.SUB;
+            adder.alufn = Inst.ADD;
             adder.a = 8h01;
             adder.b = 8h01;
             
@@ -110,7 +112,7 @@ module test_adder (
             }             
           4h8:
           //Negative - Positive, Overflow
-            adder.alufn = Inst.SUB;
+            adder.alufn = Inst.ADD;
             adder.a = 8h80;
             adder.b = 8h01;
             
@@ -119,7 +121,7 @@ module test_adder (
             }
           4h9:
           //Positive - Negative, Overflow
-            adder.alufn = Inst.SUB;
+            adder.alufn = Inst.ADD;
             adder.a = 8h7F;
             adder.b = 8h81;
             
@@ -128,7 +130,7 @@ module test_adder (
             }
           4hA:
           //Negative - Positive, No Overflow
-            adder.alufn = Inst.SUB;
+            adder.alufn = Inst.ADD;
             adder.a = 8hFF;
             adder.b = 8h01;
             
@@ -137,7 +139,7 @@ module test_adder (
             }
           4hB:
           //Positive - Negative, No Overflow
-            adder.alufn = Inst.SUB;
+            adder.alufn = Inst.ADD;
             adder.a = 8h01;
             adder.b = 8hFF;
             
@@ -146,7 +148,7 @@ module test_adder (
             }                         
           4hC:
           //Zero - Zero
-            adder.alufn = Inst.SUB;            
+            adder.alufn = Inst.ADD;            
             adder.a = 8h00;
             adder.b = 8h00;
             

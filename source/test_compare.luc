@@ -26,7 +26,8 @@ module test_compare (
     if(start == 0){ 
       state.d = state.IDLE;
     }
-    
+    // test cases are tested in this segment
+    // status is used to indicate the test result
     case(state.q) {
       state.IDLE:
         status = 0;
@@ -34,9 +35,8 @@ module test_compare (
           state.d = state.TEST;
         }
       state.TEST:
-        case(test_counter.q) {
-          //compare FF and FF
-          4h0:
+        case(test_counter.q) {     
+          4h0: // Test if FF = FF
             compare.alufn = Inst.CMPEQ;
             compare.a = 8hFF;
             compare.b = 8hFF;
@@ -44,7 +44,7 @@ module test_compare (
             if(compare.out != 1) {
               state.d = state.FAIL;
             }
-          4h1:
+          4h1: // Test if FF < FF
             compare.alufn = Inst.CMPLT;
             compare.a = 8hFF;
             compare.b = 8hFF;
@@ -52,16 +52,15 @@ module test_compare (
             if(compare.out != 0) {
               state.d = state.FAIL;
             }  
-          4h2:
+          4h2: // Test if FF <= FF
             compare.alufn = Inst.CMPLE;
             compare.a = 8hFF;
             compare.b = 8hFF;
             
             if(compare.out != 1) {
               state.d = state.FAIL;
-            }  
-          //compare 00 and 00  
-          4h3:
+            }    
+          4h3: // Test if 00 = 00
             compare.alufn = Inst.CMPEQ;
             compare.a = 8h00;
             compare.b = 8h00;
@@ -69,7 +68,7 @@ module test_compare (
             if(compare.out != 1) {
               state.d = state.FAIL;
             }                                      
-          4h4:
+          4h4: // Test if 00 < 00
             compare.alufn = Inst.CMPLT;
             compare.a = 8h00;
             compare.b = 8h00;
@@ -77,7 +76,7 @@ module test_compare (
             if(compare.out != 0) {
               state.d = state.FAIL;
             }            
-          4h5:
+          4h5: // Test if 00 <= 00
             compare.alufn = Inst.CMPLE;
             compare.a = 8h00;
             compare.b = 8h00;
@@ -86,7 +85,7 @@ module test_compare (
               state.d = state.FAIL;
             }   
           // a > b         
-          4h6:
+          4h6: //Test if 53 = 35
             compare.alufn = Inst.CMPEQ;
             compare.a = 8h53;
             compare.b = 8h35;
@@ -94,7 +93,7 @@ module test_compare (
             if(compare.out != 0) {
               state.d = state.FAIL;
             }            
-          4h7:
+          4h7: //Test if 53 < 35
             compare.alufn = Inst.CMPLT;
             compare.a = 8h53;
             compare.b = 8h35;
@@ -102,7 +101,7 @@ module test_compare (
             if(compare.out != 0) {
               state.d = state.FAIL;
             }             
-          4h8:
+          4h8: // Test if 53 <= 35
             compare.alufn = Inst.CMPLE;
             compare.a = 8h53;
             compare.b = 8h35;
@@ -111,7 +110,7 @@ module test_compare (
               state.d = state.FAIL;
             } 
           // a < b
-          4h9:
+          4h9: //Test if 36 = 54
             compare.alufn = Inst.CMPEQ;
             compare.a = 8h36;
             compare.b = 8h54;
@@ -119,7 +118,7 @@ module test_compare (
             if(compare.out != 0) {
               state.d = state.FAIL;
             }  
-          4hA:
+          4hA: // Test if 36 < 54
             compare.alufn = Inst.CMPLT;
             compare.a = 8h36;
             compare.b = 8h54;
@@ -127,7 +126,7 @@ module test_compare (
             if(compare.out != 1) {
               state.d = state.FAIL;
             } 
-          4hB:
+          4hB: // Test if 36 <= 54
             compare.alufn = Inst.CMPLE;
             compare.a = 8h36;
             compare.b = 8h54;

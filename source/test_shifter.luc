@@ -35,7 +35,7 @@ module test_shifter (
         }
       state.TEST:
         case(test_counter.q) {
-          4b0000:
+          4b0000: //Shift FF by 7 to the left
             shifter.alufn = Inst.SHL;
             shifter.a = 8hFF;
             shifter.b = 8h7;
@@ -43,7 +43,7 @@ module test_shifter (
             if(shifter.out != 8h80) {
               state.d = state.FAIL;
             }
-          4b0001:
+          4b0001: //Shift 0 by 7 to the left
             shifter.alufn = Inst.SHL;
             shifter.a = 8h0;
             shifter.b = 8h7;
@@ -51,7 +51,7 @@ module test_shifter (
             if(shifter.out != 8h0) {
               state.d = state.FAIL;
             }
-          4b0010:
+          4b0010: //Shift 35 by 4 to the left
             shifter.alufn = Inst.SHL;
             shifter.a = 8h35;
             shifter.b = 8h4;
@@ -60,7 +60,7 @@ module test_shifter (
               state.d = state.FAIL;
             }    
                      
-          4b0011:
+          4b0011: //Shift FF by 7 to the right
             shifter.alufn = Inst.SHR;
             shifter.a = 8hFF;
             shifter.b = 8h7;
@@ -68,7 +68,7 @@ module test_shifter (
             if(shifter.out != 8h1) {
               state.d = state.FAIL;
             }
-          4b0100:
+          4b0100: //Shift 00 by 7 to the right
             shifter.alufn = Inst.SHR;
             shifter.a = 8h0;
             shifter.b = 8h7;
@@ -76,7 +76,7 @@ module test_shifter (
             if(shifter.out != 8h0) {
               state.d = state.FAIL;
             }
-          4b0101:
+          4b0101: //Shift 35 by 4 to the right
             shifter.alufn = Inst.SHR;
             shifter.a = 8h35;
             shifter.b = 8h4;
@@ -85,7 +85,7 @@ module test_shifter (
               state.d = state.FAIL;
             }
             
-          4b0110:
+          4b0110: //Shift Arithmetic FF by 7 to the right
             shifter.alufn = Inst.SRA;
             shifter.a = 8hFF;
             shifter.b = 8h7;
@@ -93,7 +93,7 @@ module test_shifter (
             if(shifter.out != 8hFF) {
               state.d = state.FAIL;
             }
-          4b0111:
+          4b0111: //Shift Arithmetic 00 by 7 to the right
             shifter.alufn = Inst.SRA;
             shifter.a = 8h0;
             shifter.b = 8h7;
@@ -101,7 +101,7 @@ module test_shifter (
             if(shifter.out != 8h00) {
               state.d = state.FAIL;
             }
-          4b1000:
+          4b1000: //Shift Arithmetic 35 by 4 to the right
             shifter.alufn = Inst.SRA;
             shifter.a = 8h35;
             shifter.b = 8h4;

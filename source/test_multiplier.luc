@@ -6,7 +6,7 @@ module test_multiplier (
     
   ) {
   
-  dff test_counter[4](.clk(clk), .rst(rst));  
+  dff test_counter[5](.clk(clk), .rst(rst));  
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -26,13 +26,15 @@ module test_multiplier (
     if(start == 0){ 
       state.d = state.IDLE;
     }
-    
+    // test cases are tested in this segment
+    // status is used to indicate the test result
     case(state.q) {
       state.IDLE:
         status = 0;
         if(start == 1) {
           state.d = state.TEST;
         }
+      
       state.TEST:
         case(test_counter.q) {
           4b0000: //Zero * Zero
@@ -78,7 +80,7 @@ module test_multiplier (
           4b0101: // Positive * Positive, no overflow
             mul.alufn = Inst.MUL;
             mul.a = 8h03;
-            mul.a = 8h03;
+            mul.b = 8h03;
             
             if (mul.out != 8h09) {
             state.d = state.FAIL;
@@ -86,7 +88,7 @@ module test_multiplier (
           4b0110: // Negative * Negative, overflow
             mul.alufn = Inst.MUL;
             mul.a = 8hC0;
-            mul.a = 8hC0;
+            mul.b = 8hC0;
             
             if (mul.out != 8h00) {
             state.d = state.FAIL;

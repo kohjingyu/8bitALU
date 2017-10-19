@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module test_adder_2 (
+module test_error_7 (
     input clk,
     input rst,
     input start,
@@ -56,7 +56,7 @@ module test_adder_2 (
         
         case (M_test_counter_q)
           4'h0: begin
-            M_adder_alufn = 6'h00;
+            M_adder_alufn = 6'h01;
             M_adder_a = 8'hff;
             M_adder_b = 8'hff;
             if (M_adder_out != 8'hfe) begin
@@ -64,7 +64,7 @@ module test_adder_2 (
             end
           end
           4'h1: begin
-            M_adder_alufn = 6'h00;
+            M_adder_alufn = 6'h01;
             M_adder_a = 8'h01;
             M_adder_b = 8'h01;
             if (M_adder_out != 8'h02) begin
@@ -72,7 +72,7 @@ module test_adder_2 (
             end
           end
           4'h2: begin
-            M_adder_alufn = 6'h00;
+            M_adder_alufn = 6'h01;
             M_adder_a = 8'h80;
             M_adder_b = 8'h80;
             if (M_adder_out != 8'h00) begin
@@ -80,7 +80,7 @@ module test_adder_2 (
             end
           end
           4'h3: begin
-            M_adder_alufn = 6'h00;
+            M_adder_alufn = 6'h01;
             M_adder_a = 8'h7f;
             M_adder_b = 8'h7f;
             if (M_adder_out != 8'hfe) begin
@@ -88,7 +88,7 @@ module test_adder_2 (
             end
           end
           4'h4: begin
-            M_adder_alufn = 6'h00;
+            M_adder_alufn = 6'h01;
             M_adder_a = 8'h7f;
             M_adder_b = 8'h8f;
             if (M_adder_out != 8'h0e) begin
@@ -96,7 +96,7 @@ module test_adder_2 (
             end
           end
           4'h5: begin
-            M_adder_alufn = 6'h00;
+            M_adder_alufn = 6'h01;
             M_adder_a = 8'h00;
             M_adder_b = 8'h00;
             if (M_adder_out != 8'h00) begin
@@ -104,7 +104,7 @@ module test_adder_2 (
             end
           end
           4'h6: begin
-            M_adder_alufn = 6'h01;
+            M_adder_alufn = 6'h00;
             M_adder_a = 8'hff;
             M_adder_b = 8'hff;
             if (M_adder_out != 8'h00) begin
@@ -112,7 +112,7 @@ module test_adder_2 (
             end
           end
           4'h7: begin
-            M_adder_alufn = 6'h01;
+            M_adder_alufn = 6'h00;
             M_adder_a = 8'h01;
             M_adder_b = 8'h01;
             if (M_adder_out != 8'h00) begin
@@ -120,7 +120,7 @@ module test_adder_2 (
             end
           end
           4'h8: begin
-            M_adder_alufn = 6'h01;
+            M_adder_alufn = 6'h00;
             M_adder_a = 8'h80;
             M_adder_b = 8'h01;
             if (M_adder_out != 8'h7f) begin
@@ -128,7 +128,7 @@ module test_adder_2 (
             end
           end
           4'h9: begin
-            M_adder_alufn = 6'h01;
+            M_adder_alufn = 6'h00;
             M_adder_a = 8'h7f;
             M_adder_b = 8'h81;
             if (M_adder_out != 8'hfe) begin
@@ -136,7 +136,7 @@ module test_adder_2 (
             end
           end
           4'ha: begin
-            M_adder_alufn = 6'h01;
+            M_adder_alufn = 6'h00;
             M_adder_a = 8'hff;
             M_adder_b = 8'h01;
             if (M_adder_out != 8'hfe) begin
@@ -144,7 +144,7 @@ module test_adder_2 (
             end
           end
           4'hb: begin
-            M_adder_alufn = 6'h01;
+            M_adder_alufn = 6'h00;
             M_adder_a = 8'h01;
             M_adder_b = 8'hff;
             if (M_adder_out != 8'h02) begin
@@ -152,7 +152,7 @@ module test_adder_2 (
             end
           end
           4'hc: begin
-            M_adder_alufn = 6'h01;
+            M_adder_alufn = 6'h00;
             M_adder_a = 8'h00;
             M_adder_b = 8'h00;
             if (M_adder_out != 8'h00) begin
@@ -176,18 +176,18 @@ module test_adder_2 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_test_counter_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_test_counter_q <= M_test_counter_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_test_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_test_counter_q <= M_test_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   

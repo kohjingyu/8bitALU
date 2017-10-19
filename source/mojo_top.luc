@@ -1,3 +1,5 @@
+
+
 global Inst {
   const ADD = 6h0;
   const SUB = 6h1;
@@ -35,6 +37,8 @@ module mojo_top (
   ) {
   
   sig rst;                  // reset signal
+  
+  
   sig a[8]; 
   sig b[8]; 
   sig alufn[6];
@@ -45,14 +49,17 @@ module mojo_top (
   test_bool test_bool;
   test_shifter test_shifter;
   test_multiplier test_multiplier;
-       
+  test_error test_error;   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
     
     .rst(rst) {
-      fsm state = {IDLE, ADDER, COMPARE, BOOL, SHIFTER, MULTIPLY};  
+      // states alternate between each possible alu operation based on the buttons pressed
+      
+      // ERROR simulates the error case for adder.
+      fsm state = {IDLE, ADDER, COMPARE, BOOL, SHIFTER, MULTIPLY, ERROR};  
       multi_seven_seg seg;
     }    
   }
@@ -63,6 +70,8 @@ module mojo_top (
     
     test_adder.clk = clk;
     test_adder.rst = rst;
+    test_error.clk = clk;
+    test_error.rst = rst;
     test_compare.clk = clk;
     test_compare.rst = rst;
     test_bool.clk = clk;
@@ -85,7 +94,7 @@ module mojo_top (
     io_seg = ~seg.seg;
     io_sel = ~seg.sel;
     
-    // Manual
+    // Manual testing (dip switches used)
     a[7:0] = io_dip[0];
     b[7:0] = io_dip[1];
     alufn = io_dip[2][5:0];   
@@ -94,12 +103,15 @@ module mojo_top (
     alu.b = b;
     alu.alufn = alufn; 
     
+    // start initiates the testing for each module
+    
     test_adder.start = 0;
     test_compare.start = 0;
     test_bool.start = 0;
     test_shifter.start = 0;
     test_multiplier.start = 0;
-        
+    test_error.start = 0;   
+    
     // Automated testing
     case(state.q) {
       state.IDLE:
@@ -163,13 +175,36 @@ module mojo_top (
         else if(test_multiplier.status == 2) {
           // FAIL
           seg.values = {4d2, 4d3, 4d4, 4d13}; //NULF(ail)
-        }      
+        }
+      state.ERROR:
+        test_error.start = 1;
+        
+        if(test_error.status == 1) {
+          // PASS
+          seg.values = {4d10, 4d11, 4d5, 4d5}; //PASS
+        }
+        else if(test_error.status == 2) {
+          // FAIL
+          seg.values = {4d11, 4d0, 4d0, 4d13}; //ADDF(ail)
+        }            
     }
     
-    // automated testing triggered on press of io_button[0] (up)
+    // automated testing triggered on pressing buttons on IO shield
+    // up - adder (ADD, SUB)
+    // center - compare
+    // down - boolean
+    // left - shifter
+    // right - multiplier
+    
     if(io_button[0]) { //up
         test_counter.d = 0;
         state.d = state.ADDER;
+      // on switching the io_dip[2][7] on, the state changes to test_error
+      // fail case is induced - adder will fail
+      if (io_dip[2][7]) {
+        test_counter.d = 0;
+        state.d = state.ERROR;
+      }      
     }
     if(io_button[1]) { //center
         test_counter.d = 0;
@@ -187,7 +222,6 @@ module mojo_top (
         test_counter.d = 0;
         state.d = state.MULTIPLY;
     }
-    // TODO: Fail case, multiply case
     
     test_counter.d = test_counter.q + 1;
     

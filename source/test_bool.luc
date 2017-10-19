@@ -26,7 +26,8 @@ module test_bool (
     if(start == 0){ 
       state.d = state.IDLE;
     }
-    
+    // test cases are tested in this segment
+    // status is used to indicate the test result
     case(state.q) {
       state.IDLE:
         status = 0;
@@ -35,7 +36,9 @@ module test_bool (
         }
       state.TEST:
         case(test_counter.q) {
-          4b0000:
+        // 35 is 00110101 and 53 is 01010011
+        // The two test case covers all possible logic gate inputs (0-0, 0-1, 1-0, 1-1)
+          4b0000: //35 AND 53
             bool.alufn = Inst.AND;
             bool.a = 8h35;
             bool.b = 8h53;
@@ -43,7 +46,7 @@ module test_bool (
             if (bool.out != 8h11) {
             state.d = state.FAIL;
             }
-          4b0001:
+          4b0001: //35 OR 53
             bool.alufn = Inst.OR;
             bool.a = 8h35;
             bool.b = 8h53;
@@ -51,7 +54,7 @@ module test_bool (
             if (bool.out != 8h77) {
             state.d = state.FAIL;
             }
-          4b0010:
+          4b0010: // Check that 00 OR 00 = 00
             bool.alufn = Inst.OR;
             bool.a = 8h0;
             bool.b = 8h0;
@@ -59,7 +62,7 @@ module test_bool (
             if (bool.out != 8h0) {
             state.d = state.FAIL;
             }
-          4b0011:
+          4b0011: // Check that FF OR FF = FF
             bool.alufn = Inst.OR;
             bool.a = 8hFF;
             bool.b = 8hFF;
@@ -67,7 +70,7 @@ module test_bool (
             if (bool.out != 8hFF) {
             state.d = state.FAIL;
             }
-          4b0100:
+          4b0100: //35 XOR 53
             bool.alufn = Inst.XOR;
             bool.a = 8h35;
             bool.b = 8h53;
@@ -75,21 +78,21 @@ module test_bool (
             if (bool.out != 8h66) {            
             state.d = state.FAIL;
             }
-          4b0101:
+          4b0101: // Check that output = input a
             bool.alufn = Inst.LDR;
             bool.a = 8h35;
             
             if (bool.out != 8h35) {
             state.d = state.FAIL;
             }   
-          4b0110:
+          4b0110: // Check that output = input a
             bool.alufn = Inst.LDR;
             bool.a = 8h00;
             
             if (bool.out != 8h00) {
             state.d = state.FAIL;
             }
-          4b0111:
+          4b0111: // Check that output = input a
             bool.alufn = Inst.LDR;
             bool.a = 8hFF;
             

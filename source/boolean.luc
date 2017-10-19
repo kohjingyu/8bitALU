@@ -16,7 +16,7 @@ module boolean (
       Inst.XOR:
         out = a ^ b;        // bit-wise XOR
       Inst.LDR:
-        out = a;
+        out = a;            // 'A' (Take the output from the input A)
     }
   }
 }

@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (nt64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Wed Oct 18 16:19:34 2017
+#Thu Oct 19 11:34:42 2017
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -75,7 +75,7 @@ P53,,,VCCAUX,,,,,,,,3.3,,,,
 P54,,,GND,,,,,,,,,,,,
 P55,avr_tx,IOB,IO_L30N_GCLK0_USERCCLK_2,INPUT,LVTTL,2,,,,NONE,,LOCATED,NO,NONE,
 P56,clk,IOB,IO_L30P_GCLK1_D13_2,INPUT,LVTTL,2,,,,NONE,,LOCATED,NO,NONE,
-P57,io_dip(23),IOB,IO_L14N_D12_2,INPUT,LVTTL,2,,,PULLDOWN,NONE,,LOCATED,NO,NONE,
+P57,io_dip[23],IOB,IO_L14N_D12_2,INPUT,LVTTL,2,,,PULLDOWN,NONE,,LOCATED,NO,NONE,
 P58,io_dip(22),IOB,IO_L14P_D11_2,INPUT,LVTTL,2,,,PULLDOWN,NONE,,LOCATED,NO,NONE,
 P59,,IOBS,IO_L13N_D10_2,UNUSED,,2,,,,,,,,,
 P60,,IOBM,IO_L13P_M1_2,UNUSED,,2,,,,,,,,,

@@ -9,6 +9,7 @@
     <src>compare.luc</src>
     <src top="true">mojo_top.luc</src>
     <src>test_adder.luc</src>
+    <src>test_error.luc</src>
     <src>shifter.luc</src>
     <src>seven_seg.luc</src>
     <src>test_compare.luc</src>

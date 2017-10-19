@@ -1,3 +1,4 @@
+// to print on seven-segment display
 module seven_seg (
     input char[4],
     output segs[7]
